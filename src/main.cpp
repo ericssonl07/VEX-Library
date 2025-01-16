@@ -24,7 +24,7 @@ const double pursuit_distance = 12.5;
 const double initial_x = 0.0;
 const double initial_y = 0.0;
 const double initial_rotation = 0.0;
-const int thread_sleep = 10;
+const int thread_sleep = 1;
 VirtualChassis base(&left_group, &right_group,
                     base_width, wheel_radius, pursuit_distance, gear_multiplier,
                     initial_x, initial_y, initial_rotation,
@@ -36,12 +36,14 @@ void motor_testfire();
 
 int main() {
     vexDelay(1);
-    // base.turn(3.14159265358979323846 * 10, 0.005, 0.15);
-    // base.follow_path({{0 TILE, 0 TILE}, {1 TILE, 0 TILE}, {1 TILE, 1 TILE}, {0 TILE, 1 TILE}, {0 TILE, 0 TILE}}, 5.0, 0.15, 50);
-    // base.forward(1 TILE, 0.5, 0.15);
-    // VirtualChassis::basic_control(&base);
+    base.turn(3.14159265358979323846 * 10, 0.005, 1);
+    // base.follow_path({{0 TILE, 0 TILE}, {1 TILE, 0 TILE}, {1 TILE, 1 TILE}, {0 TILE, 1 TILE}, {0 TILE, 0 TILE}}, 5.0, 1, 50);
+    // base.forward(3 TILE, 0.5, 1.0);
+    // base.follow_path({0 TILE, 1 TILE, 2 TILE, 3 TILE}, {0 TILE, -0.25 TILE, 0 TILE, -0.25 TILE}, 0.5, 0.25, 50);
+    // base.follow_path({0 TILE, -0.5 TILE, -1 TILE}, {0 TILE, 0 TILE, 0 TILE}, 0.5, 0.15, 50);
     // motor_testfire();
     // base.turn(3.14159265358979323846, 0.005, 0.15);
+    vex::thread control(VirtualChassis::basic_control, &base);
     while (true) { vex::this_thread::sleep_for(1000); }
 }
 

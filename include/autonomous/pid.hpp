@@ -9,6 +9,8 @@
  */
 class PID {
 
+    friend class VirtualChassis;
+
     /**
      * @brief PID controller parameters
      * 

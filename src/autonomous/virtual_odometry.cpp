@@ -55,7 +55,7 @@ int virtual_track(void* o) {
 int virtual_display(void* o) {
     VirtualOdometry* odometry = (VirtualOdometry*) o;
     while (true) {
-        printf("(%.5f, %.5f)\n", odometry -> x_position, odometry -> y_position);
+        // printf("(%.5f, %.5f)\n", odometry -> x_position, odometry -> y_position);
         vex::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }

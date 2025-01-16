@@ -1,6 +1,7 @@
 #include <autonomous/pid.hpp>
 #include <iostream>
 #include <cmath>
+#include <cstdio>
 
 PID::PID(double kp, double ki, double kd, double minimum_output, double maximum_output, double gamma):
     kp(kp), ki(ki), kd(kd), minimum_output(fabs(minimum_output)), 

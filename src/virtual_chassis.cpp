@@ -28,25 +28,47 @@ void VirtualChassis::follow_path(std::vector<std::pair<double, double>> points, 
 }
 
 void VirtualChassis::follow_path(Path path, double tolerance, double speed_factor) {
-    const double kp = 0.01;
+    const double kp = 0.1; // 0.15 ok, aaron's is 2.56 in cm scale
     const double ki = 0.0;
-    const double kd = 0.0;
-    const double minimum_output = 0.5;
+    const double kd = 1000;
+    const double minimum_output = 0;
     const double maximum_output = 100.0;
+    const double minimum_motor_power = 0.5;
+    const double maximum_motor_power = 100.0;
     const double gamma = 0.999;
     PID linear_pid_controller(kp, ki, kd, minimum_output, maximum_output, gamma);
     Pursuit pursuit_controller(path, pursuit_distance);
     linear_pid_controller.set_target(0);
     double current_distance = path.distance_to_end(odom.x(), odom.y());
     vex::brain brain;
-    while (current_distance > tolerance) {
+    while (current_distance > tolerance or fabs(linear_pid_controller.last_error + current_distance) > 1e-2) {
         auto [steering_left, steering_right] = pursuit_controller.get_relative_steering(odom.x(), odom.y(), odom.rotation(), base_width);
-        double pid_factor = linear_pid_controller.calculate(-current_distance);
+        double distance_to_calculate = current_distance;
+        if (current_distance > pursuit_controller.lookahead_distance()) {
+            distance_to_calculate = pursuit_controller.lookahead_distance();
+        }
+        double pid_factor = linear_pid_controller.calculate(-distance_to_calculate);
+        // printf("%.5e\n", fabs(linear_pid_controller.last_error + current_distance));
+        printf("%.5f\n", pid_factor);
+        // printf("%.5e\n", fabs(linear_pid_controller.last_error - current_distance));
         double raw_left_power = steering_left * pid_factor;
         double raw_right_power = steering_right * pid_factor;
-        double normalization_factor = 100.0 / (fabs(raw_left_power) + fabs(raw_right_power));
-        double normalized_left_power = raw_left_power * normalization_factor;
-        double normalized_right_power = raw_right_power * normalization_factor;
+        double normalized_left_power = raw_left_power;
+        double normalized_right_power = raw_right_power;
+        auto limit = [minimum_motor_power, maximum_motor_power] (double value) -> double {
+            bool neg = false;
+            if (value < 0) {
+                neg = true;
+                value = -value;
+            }
+            if (value > maximum_motor_power) return maximum_motor_power;
+            if (value < minimum_motor_power) return minimum_motor_power;
+            if (neg) return -value;
+            return value;
+        };
+        normalized_left_power = limit(normalized_left_power);
+        normalized_right_power = limit(normalized_right_power);
+        // printf("%.5f %.5f\n", normalized_left_power, normalized_right_power);
         left -> spin(vex::fwd, normalized_left_power * speed_factor, vex::pct);
         right -> spin(vex::fwd, normalized_right_power * speed_factor, vex::pct);
         current_distance = path.distance_to_end(odom.x(), odom.y());

@@ -56,7 +56,8 @@ void MotorGroup::spin(vex::directionType dir, double velocity, vex::velocityUnit
 
 void MotorGroup::spin(vex::directionType dir, double velocity, vex::percentUnits units) {
     for (vex::motor* motor : motors) {
-        motor -> spin(dir, velocity, units);
+        double voltage = velocity * 128;
+        motor -> spin(dir, voltage, vex::voltageUnits::mV);
     }
 }
 
