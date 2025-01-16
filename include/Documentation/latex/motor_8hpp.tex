@@ -1,0 +1,28 @@
+\doxysection{autonomous/motor.hpp File Reference}
+\hypertarget{motor_8hpp}{}\label{motor_8hpp}\index{autonomous/motor.hpp@{autonomous/motor.hpp}}
+{\ttfamily \#include $<$vex.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_motor_group}{Motor\+Group}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{class_motor_group}{Motor\+Group} class implements a motor group, but data are taken from all motors and returned as a vector (VEX\textquotesingle{}s native {\ttfamily vex\+::motor\+\_\+group} class will return the requested reading of the first motor in the motor group only). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{motor_8hpp_af2342f2b076ee66e8e72a2cd5b1a7ec9}{repeat}}(iterations)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{motor_8hpp_af2342f2b076ee66e8e72a2cd5b1a7ec9}\index{motor.hpp@{motor.hpp}!repeat@{repeat}}
+\index{repeat@{repeat}!motor.hpp@{motor.hpp}}
+\doxysubsubsection{\texorpdfstring{repeat}{repeat}}
+{\footnotesize\ttfamily \label{motor_8hpp_af2342f2b076ee66e8e72a2cd5b1a7ec9} 
+\#define repeat(\begin{DoxyParamCaption}\item[{}]{iterations}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iterator\ =\ 0;\ iterator\ <\ iterations;\ iterator++)}
+
+\end{DoxyCode}

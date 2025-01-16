@@ -1,0 +1,406 @@
+\doxysection{Chassis Class Reference}
+\hypertarget{class_chassis}{}\label{class_chassis}\index{Chassis@{Chassis}}
+
+
+{\ttfamily \#include $<$chassis.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chassis_af297223931de610ed5b91cf36a0b6ec1}{Chassis}} (\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_chassis_a679a72400c8c5a94dba22973ce279105}{left}}, \mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_chassis_a8c6e9b445f6b05bd4f198e72b84e3109}{right}}, vex\+::rotation \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_chassis_ad548d805e3018c4ddeec2d0dbb263036}{front\+\_\+back\+\_\+encoder}}, vex\+::rotation \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_chassis_a39dec69ecf3de9f51ea1dbff9061864f}{left\+\_\+right\+\_\+encoder}}, vex\+::inertial \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_chassis_aed75249c66260fbf5167e6fde89fa87c}{inertial\+\_\+sensor}}, double \mbox{\hyperlink{class_chassis_a7c8bfa5d3240eed98d4a652fe8a3dc40}{base\+\_\+width}}, double \mbox{\hyperlink{class_chassis_abd90f116b20164a3f007cda9d4d3a685}{wheel\+\_\+radius}}, double \mbox{\hyperlink{class_chassis_a4698663a4f48db3907bbc998fe44c12d}{pursuit\+\_\+distance}}, double \mbox{\hyperlink{class_chassis_af72753edf0f1aabb536733c16ed19e17}{gear\+\_\+multiplier}}, double initial\+\_\+x=0.\+0, double initial\+\_\+y=0.\+0, double initial\+\_\+rotation=0.\+0, int \mbox{\hyperlink{class_chassis_aaaa050cd1c14ba2f9809830347c2f2be}{thread\+\_\+sleep}}=10)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_chassis}{Chassis} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chassis_a15b4f18c252d70bdda777d3c9ceb9e87}{follow\+\_\+path}} (std\+::vector$<$ double $>$ \mbox{\hyperlink{class_chassis_a7387e6f2e8b45f94e02ffee514fd6a43}{x}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{class_chassis_ab9013309534954d54aff34b35c131e0b}{y}}, double tolerance, double speed\+\_\+factor=1.\+0, int num\+\_\+points=50)
+\begin{DoxyCompactList}\small\item\em Follow the path interpolated by the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chassis_a46c606dae6dc1f6227fbe1824303f7d6}{follow\+\_\+path}} (std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ points, double tolerance, double speed\+\_\+factor=1.\+0, int point\+\_\+count=50)
+\begin{DoxyCompactList}\small\item\em Follow the given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chassis_a6e20ba55496c7c3b8dccbae983df92b8}{follow\+\_\+path}} (\mbox{\hyperlink{class_path}{Path}} path, double tolerance=5.\+0, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Follow the given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chassis_af2dea15e50fe6f29fbbaec860f12ff49}{turn\+\_\+to}} (double angle, double tolerance=0.\+01, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Turn to the given angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chassis_a6a072cf91648b7aa6d03c297bfe9af51}{turn}} (double angle, double tolerance=0.\+01, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Turn by the given angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chassis_ad880e2ddf3484996b7ad54d387d833d8}{forward}} (double distance, double tolerance=5.\+0, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Move the robot by the given distance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_chassis_a7387e6f2e8b45f94e02ffee514fd6a43}{x}} ()
+\begin{DoxyCompactList}\small\item\em Get the x-\/coordinate of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_chassis_ab9013309534954d54aff34b35c131e0b}{y}} ()
+\begin{DoxyCompactList}\small\item\em Get the y-\/coordinate of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_chassis_a5e69333d830e528497f11bbdcb951e51}{rotation}} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_chassis_a6c99d80fc0599dd701d845e1351d4b86}{basic\+\_\+control}} (void \texorpdfstring{$\ast$}{*}instance)
+\begin{DoxyCompactList}\small\item\em Basic controller movement-\/ should be threaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_chassis_a679a72400c8c5a94dba22973ce279105}{left}}
+\begin{DoxyCompactList}\small\item\em The left motor group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_chassis_a8c6e9b445f6b05bd4f198e72b84e3109}{right}}
+\begin{DoxyCompactList}\small\item\em The right motor group. \end{DoxyCompactList}\item 
+vex\+::rotation \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_chassis_ad548d805e3018c4ddeec2d0dbb263036}{front\+\_\+back\+\_\+encoder}}
+\begin{DoxyCompactList}\small\item\em The front-\/back encoder for odometry. \end{DoxyCompactList}\item 
+vex\+::rotation \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_chassis_a39dec69ecf3de9f51ea1dbff9061864f}{left\+\_\+right\+\_\+encoder}}
+\begin{DoxyCompactList}\small\item\em The left-\/right encoder for odometry. \end{DoxyCompactList}\item 
+vex\+::inertial \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_chassis_aed75249c66260fbf5167e6fde89fa87c}{inertial\+\_\+sensor}}
+\begin{DoxyCompactList}\small\item\em The inertial sensor for odometry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_odometry}{Odometry}} \mbox{\hyperlink{class_chassis_a7e3a14953887e32c0ef0e0a9f18bdb82}{odom}}
+\begin{DoxyCompactList}\small\item\em The odometry device to track position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_chassis_a7c8bfa5d3240eed98d4a652fe8a3dc40}{base\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em The width of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_chassis_abd90f116b20164a3f007cda9d4d3a685}{wheel\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em The radius of the wheel. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_chassis_a4698663a4f48db3907bbc998fe44c12d}{pursuit\+\_\+distance}}
+\begin{DoxyCompactList}\small\item\em The look-\/ahead distance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_chassis_af72753edf0f1aabb536733c16ed19e17}{gear\+\_\+multiplier}}
+\begin{DoxyCompactList}\small\item\em The gear multiplier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_chassis_aaaa050cd1c14ba2f9809830347c2f2be}{thread\+\_\+sleep}}
+\begin{DoxyCompactList}\small\item\em The sleep time for the tracking thread, in microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_chassis_af297223931de610ed5b91cf36a0b6ec1}\index{Chassis@{Chassis}!Chassis@{Chassis}}
+\index{Chassis@{Chassis}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{Chassis()}{Chassis()}}
+{\footnotesize\ttfamily \label{class_chassis_af297223931de610ed5b91cf36a0b6ec1} 
+Chassis\+::\+Chassis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}}]{left}{, }\item[{\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}}]{right}{, }\item[{vex\+::rotation \texorpdfstring{$\ast$}{*}}]{front\+\_\+back\+\_\+encoder}{, }\item[{vex\+::rotation \texorpdfstring{$\ast$}{*}}]{left\+\_\+right\+\_\+encoder}{, }\item[{vex\+::inertial \texorpdfstring{$\ast$}{*}}]{inertial\+\_\+sensor}{, }\item[{double}]{base\+\_\+width}{, }\item[{double}]{wheel\+\_\+radius}{, }\item[{double}]{pursuit\+\_\+distance}{, }\item[{double}]{gear\+\_\+multiplier}{, }\item[{double}]{initial\+\_\+x}{ = {\ttfamily 0.0}, }\item[{double}]{initial\+\_\+y}{ = {\ttfamily 0.0}, }\item[{double}]{initial\+\_\+rotation}{ = {\ttfamily 0.0}, }\item[{int}]{thread\+\_\+sleep}{ = {\ttfamily 10}}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_chassis}{Chassis} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The left motor group \\
+\hline
+{\em right} & The right motor group \\
+\hline
+{\em front\+\_\+back\+\_\+encoder} & The front-\/back encoder for odometry \\
+\hline
+{\em left\+\_\+right\+\_\+encoder} & The left-\/right encoder for odometry \\
+\hline
+{\em inertial\+\_\+sensor} & The inertial sensor for odometry \\
+\hline
+{\em base\+\_\+width} & The width of the robot \\
+\hline
+{\em wheel\+\_\+radius} & The radius of the wheel \\
+\hline
+{\em pursuit\+\_\+distance} & The look-\/ahead distance \\
+\hline
+{\em gear\+\_\+multiplier} & The gear multiplier \\
+\hline
+{\em kp} & The proportional gain constant \\
+\hline
+{\em ki} & The integral gain constant \\
+\hline
+{\em kd} & The derivative gain constant \\
+\hline
+{\em minimum\+\_\+output} & The absolute value of the minimum output of the \doxylink{class_p_i_d}{PID} controller \\
+\hline
+{\em maximum\+\_\+output} & The absolute value of the maximum output of the \doxylink{class_p_i_d}{PID} controller \\
+\hline
+{\em gamma} & The integral discount value of the \doxylink{class_p_i_d}{PID} controller (earlier values get "{}forgotten"{}) \\
+\hline
+{\em initial\+\_\+x} & The initial x-\/coordinate of the robot \\
+\hline
+{\em initial\+\_\+y} & The initial y-\/coordinate of the robot \\
+\hline
+{\em initial\+\_\+rotation} & The initial rotation of the robot \\
+\hline
+{\em thread\+\_\+sleep} & The sleep time for the tracking thread, in microseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Ensure that the distance measurements are in consistent units as odometry. 
+\end{DoxyAttention}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_chassis_a6c99d80fc0599dd701d845e1351d4b86}\index{Chassis@{Chassis}!basic\_control@{basic\_control}}
+\index{basic\_control@{basic\_control}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{basic\_control()}{basic\_control()}}
+{\footnotesize\ttfamily \label{class_chassis_a6c99d80fc0599dd701d845e1351d4b86} 
+static void Chassis\+::basic\+\_\+control (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{instance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Basic controller movement-\/ should be threaded. 
+
+\Hypertarget{class_chassis_a6e20ba55496c7c3b8dccbae983df92b8}\index{Chassis@{Chassis}!follow\_path@{follow\_path}}
+\index{follow\_path@{follow\_path}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{follow\_path()}{follow\_path()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_chassis_a6e20ba55496c7c3b8dccbae983df92b8} 
+void Chassis\+::follow\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_path}{Path}}}]{path}{, }\item[{double}]{tolerance}{ = {\ttfamily 5.0}, }\item[{double}]{speed\+\_\+factor}{ = {\ttfamily 1.0}}\end{DoxyParamCaption})}
+
+
+
+Follow the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path object to follow \\
+\hline
+{\em tolerance} & The distance tolerance for the path (ending condition) \\
+\hline
+{\em speed\+\_\+factor} & The speed factor for the movement \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_chassis_a15b4f18c252d70bdda777d3c9ceb9e87}\index{Chassis@{Chassis}!follow\_path@{follow\_path}}
+\index{follow\_path@{follow\_path}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{follow\_path()}{follow\_path()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_chassis_a15b4f18c252d70bdda777d3c9ceb9e87} 
+void Chassis\+::follow\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x}{, }\item[{std\+::vector$<$ double $>$}]{y}{, }\item[{double}]{tolerance}{, }\item[{double}]{speed\+\_\+factor}{ = {\ttfamily 1.0}, }\item[{int}]{num\+\_\+points}{ = {\ttfamily 50}}\end{DoxyParamCaption})}
+
+
+
+Follow the path interpolated by the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinates \\
+\hline
+{\em y} & The y-\/coordinates \\
+\hline
+{\em tolerance} & The distance tolerance for the path (ending condition) \\
+\hline
+{\em speed\+\_\+factor} & The speed factor for the movement \\
+\hline
+{\em num\+\_\+points} & The number of points to interpolate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_chassis_a46c606dae6dc1f6227fbe1824303f7d6}\index{Chassis@{Chassis}!follow\_path@{follow\_path}}
+\index{follow\_path@{follow\_path}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{follow\_path()}{follow\_path()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_chassis_a46c606dae6dc1f6227fbe1824303f7d6} 
+void Chassis\+::follow\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$}]{points}{, }\item[{double}]{tolerance}{, }\item[{double}]{speed\+\_\+factor}{ = {\ttfamily 1.0}, }\item[{int}]{point\+\_\+count}{ = {\ttfamily 50}}\end{DoxyParamCaption})}
+
+
+
+Follow the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & The points to follow \\
+\hline
+{\em tolerance} & The distance tolerance for the path (ending condition) \\
+\hline
+{\em speed\+\_\+factor} & The speed factor for the movement \\
+\hline
+{\em point\+\_\+count} & The number of points to interpolate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_chassis_ad880e2ddf3484996b7ad54d387d833d8}\index{Chassis@{Chassis}!forward@{forward}}
+\index{forward@{forward}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily \label{class_chassis_ad880e2ddf3484996b7ad54d387d833d8} 
+void Chassis\+::forward (\begin{DoxyParamCaption}\item[{double}]{distance}{, }\item[{double}]{tolerance}{ = {\ttfamily 5.0}, }\item[{double}]{speed\+\_\+factor}{ = {\ttfamily 1.0}}\end{DoxyParamCaption})}
+
+
+
+Move the robot by the given distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The distance to move by \\
+\hline
+{\em tolerance} & The distance tolerance for the path (ending condition) \\
+\hline
+{\em speed\+\_\+factor} & The speed factor for the movement \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_chassis_a5e69333d830e528497f11bbdcb951e51}\index{Chassis@{Chassis}!rotation@{rotation}}
+\index{rotation@{rotation}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily \label{class_chassis_a5e69333d830e528497f11bbdcb951e51} 
+double Chassis\+::rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the rotation of the robot. 
+
+\begin{DoxyReturn}{Returns}
+The rotation of the robot 
+\end{DoxyReturn}
+\Hypertarget{class_chassis_a6a072cf91648b7aa6d03c297bfe9af51}\index{Chassis@{Chassis}!turn@{turn}}
+\index{turn@{turn}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{turn()}{turn()}}
+{\footnotesize\ttfamily \label{class_chassis_a6a072cf91648b7aa6d03c297bfe9af51} 
+void Chassis\+::turn (\begin{DoxyParamCaption}\item[{double}]{angle}{, }\item[{double}]{tolerance}{ = {\ttfamily 0.01}, }\item[{double}]{speed\+\_\+factor}{ = {\ttfamily 1.0}}\end{DoxyParamCaption})}
+
+
+
+Turn by the given angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle to turn by, in radians \\
+\hline
+{\em tolerance} & The angle tolerance for the path, in radians (ending condition) \\
+\hline
+{\em speed\+\_\+factor} & The speed factor for the movement \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_chassis_af2dea15e50fe6f29fbbaec860f12ff49}\index{Chassis@{Chassis}!turn\_to@{turn\_to}}
+\index{turn\_to@{turn\_to}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{turn\_to()}{turn\_to()}}
+{\footnotesize\ttfamily \label{class_chassis_af2dea15e50fe6f29fbbaec860f12ff49} 
+void Chassis\+::turn\+\_\+to (\begin{DoxyParamCaption}\item[{double}]{angle}{, }\item[{double}]{tolerance}{ = {\ttfamily 0.01}, }\item[{double}]{speed\+\_\+factor}{ = {\ttfamily 1.0}}\end{DoxyParamCaption})}
+
+
+
+Turn to the given angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle to turn to, in radians \\
+\hline
+{\em tolerance} & The angle tolerance for the path, in radians (ending condition) \\
+\hline
+{\em speed\+\_\+factor} & The speed factor for the movement \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_chassis_a7387e6f2e8b45f94e02ffee514fd6a43}\index{Chassis@{Chassis}!x@{x}}
+\index{x@{x}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily \label{class_chassis_a7387e6f2e8b45f94e02ffee514fd6a43} 
+double Chassis\+::x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the x-\/coordinate of the robot. 
+
+\begin{DoxyReturn}{Returns}
+The x-\/coordinate of the robot 
+\end{DoxyReturn}
+\Hypertarget{class_chassis_ab9013309534954d54aff34b35c131e0b}\index{Chassis@{Chassis}!y@{y}}
+\index{y@{y}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily \label{class_chassis_ab9013309534954d54aff34b35c131e0b} 
+double Chassis\+::y (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the y-\/coordinate of the robot. 
+
+\begin{DoxyReturn}{Returns}
+The y-\/coordinate of the robot 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_chassis_a7c8bfa5d3240eed98d4a652fe8a3dc40}\index{Chassis@{Chassis}!base\_width@{base\_width}}
+\index{base\_width@{base\_width}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{base\_width}{base\_width}}
+{\footnotesize\ttfamily \label{class_chassis_a7c8bfa5d3240eed98d4a652fe8a3dc40} 
+double Chassis\+::base\+\_\+width}
+
+
+
+The width of the robot. 
+
+\Hypertarget{class_chassis_ad548d805e3018c4ddeec2d0dbb263036}\index{Chassis@{Chassis}!front\_back\_encoder@{front\_back\_encoder}}
+\index{front\_back\_encoder@{front\_back\_encoder}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{front\_back\_encoder}{front\_back\_encoder}}
+{\footnotesize\ttfamily \label{class_chassis_ad548d805e3018c4ddeec2d0dbb263036} 
+vex\+::rotation\texorpdfstring{$\ast$}{*} Chassis\+::front\+\_\+back\+\_\+encoder}
+
+
+
+The front-\/back encoder for odometry. 
+
+\Hypertarget{class_chassis_af72753edf0f1aabb536733c16ed19e17}\index{Chassis@{Chassis}!gear\_multiplier@{gear\_multiplier}}
+\index{gear\_multiplier@{gear\_multiplier}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{gear\_multiplier}{gear\_multiplier}}
+{\footnotesize\ttfamily \label{class_chassis_af72753edf0f1aabb536733c16ed19e17} 
+double Chassis\+::gear\+\_\+multiplier}
+
+
+
+The gear multiplier. 
+
+\Hypertarget{class_chassis_aed75249c66260fbf5167e6fde89fa87c}\index{Chassis@{Chassis}!inertial\_sensor@{inertial\_sensor}}
+\index{inertial\_sensor@{inertial\_sensor}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{inertial\_sensor}{inertial\_sensor}}
+{\footnotesize\ttfamily \label{class_chassis_aed75249c66260fbf5167e6fde89fa87c} 
+vex\+::inertial\texorpdfstring{$\ast$}{*} Chassis\+::inertial\+\_\+sensor}
+
+
+
+The inertial sensor for odometry. 
+
+\Hypertarget{class_chassis_a679a72400c8c5a94dba22973ce279105}\index{Chassis@{Chassis}!left@{left}}
+\index{left@{left}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \label{class_chassis_a679a72400c8c5a94dba22973ce279105} 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}}\texorpdfstring{$\ast$}{*} Chassis\+::left}
+
+
+
+The left motor group. 
+
+\Hypertarget{class_chassis_a39dec69ecf3de9f51ea1dbff9061864f}\index{Chassis@{Chassis}!left\_right\_encoder@{left\_right\_encoder}}
+\index{left\_right\_encoder@{left\_right\_encoder}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{left\_right\_encoder}{left\_right\_encoder}}
+{\footnotesize\ttfamily \label{class_chassis_a39dec69ecf3de9f51ea1dbff9061864f} 
+vex\+::rotation\texorpdfstring{$\ast$}{*} Chassis\+::left\+\_\+right\+\_\+encoder}
+
+
+
+The left-\/right encoder for odometry. 
+
+\Hypertarget{class_chassis_a7e3a14953887e32c0ef0e0a9f18bdb82}\index{Chassis@{Chassis}!odom@{odom}}
+\index{odom@{odom}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{odom}{odom}}
+{\footnotesize\ttfamily \label{class_chassis_a7e3a14953887e32c0ef0e0a9f18bdb82} 
+\mbox{\hyperlink{class_odometry}{Odometry}} Chassis\+::odom}
+
+
+
+The odometry device to track position. 
+
+\Hypertarget{class_chassis_a4698663a4f48db3907bbc998fe44c12d}\index{Chassis@{Chassis}!pursuit\_distance@{pursuit\_distance}}
+\index{pursuit\_distance@{pursuit\_distance}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{pursuit\_distance}{pursuit\_distance}}
+{\footnotesize\ttfamily \label{class_chassis_a4698663a4f48db3907bbc998fe44c12d} 
+double Chassis\+::pursuit\+\_\+distance}
+
+
+
+The look-\/ahead distance. 
+
+\Hypertarget{class_chassis_a8c6e9b445f6b05bd4f198e72b84e3109}\index{Chassis@{Chassis}!right@{right}}
+\index{right@{right}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \label{class_chassis_a8c6e9b445f6b05bd4f198e72b84e3109} 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}}\texorpdfstring{$\ast$}{*} Chassis\+::right}
+
+
+
+The right motor group. 
+
+\Hypertarget{class_chassis_aaaa050cd1c14ba2f9809830347c2f2be}\index{Chassis@{Chassis}!thread\_sleep@{thread\_sleep}}
+\index{thread\_sleep@{thread\_sleep}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{thread\_sleep}{thread\_sleep}}
+{\footnotesize\ttfamily \label{class_chassis_aaaa050cd1c14ba2f9809830347c2f2be} 
+int Chassis\+::thread\+\_\+sleep}
+
+
+
+The sleep time for the tracking thread, in microseconds. 
+
+\Hypertarget{class_chassis_abd90f116b20164a3f007cda9d4d3a685}\index{Chassis@{Chassis}!wheel\_radius@{wheel\_radius}}
+\index{wheel\_radius@{wheel\_radius}!Chassis@{Chassis}}
+\doxysubsubsection{\texorpdfstring{wheel\_radius}{wheel\_radius}}
+{\footnotesize\ttfamily \label{class_chassis_abd90f116b20164a3f007cda9d4d3a685} 
+double Chassis\+::wheel\+\_\+radius}
+
+
+
+The radius of the wheel. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{chassis_8hpp}{chassis.\+hpp}}\end{DoxyCompactItemize}

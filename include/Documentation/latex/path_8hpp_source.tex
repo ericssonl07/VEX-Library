@@ -1,0 +1,98 @@
+\doxysection{path.\+hpp}
+\hypertarget{path_8hpp_source}{}\label{path_8hpp_source}\index{pathing/path.hpp@{pathing/path.hpp}}
+\mbox{\hyperlink{path_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VEXLIBRARY\_PATH\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VEXLIBRARY\_PATH\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{matrix_8hpp}{pathing/matrix.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_abbef338e19b6ce8442a72d5fdf2b1152}{x}};}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_a0a78d5bdf6ce2466f0be2b34054993ca}{y}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_a9988f37e620b5385c4ca4ebfdbd3e3ae}{Coordinate2D}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_abbef338e19b6ce8442a72d5fdf2b1152}{x}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_a0a78d5bdf6ce2466f0be2b34054993ca}{y}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cubic_expression_afbd669f05f4d59f57dc77c3402c81708}{CubicExpression}}\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413}{a}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_acebdb87f622a14af782641d360803aed}{b}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029}{c}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e}{d}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{struct_cubic_expression_afbd669f05f4d59f57dc77c3402c81708}{CubicExpression}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{struct_cubic_expression_acdc4e56b91d67e7905f423715bf6f2f8}{CubicExpression}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413}{a}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_acebdb87f622a14af782641d360803aed}{b}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029}{c}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e}{d}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cubic_spline_adb03a85f114425ebd0f5927a2933c13b}{CubicSpline}}\ \{}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cubic_spline_a4877239a6b7f09fbf5a61ca68a49d74c}{Path}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ \mbox{\hyperlink{class_cubic_spline_a3b5c00363b0edb2a56977d5a564606e1}{operations}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ std::vector<CubicExpression>\ \mbox{\hyperlink{class_cubic_spline_a02fb35fffef4fb37a07c46e8412ff83f}{coefficients}};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_cubic_spline_aff9a6a3d3daabebb817503e4f14391c8}{piecewise\_boundaries}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<double>\ \mbox{\hyperlink{class_cubic_spline_ac01b8a52279f025ac83db3ef099da0b2}{linspace}}(\textcolor{keywordtype}{double}\ start,\ \textcolor{keywordtype}{double}\ end,\ \textcolor{keywordtype}{int}\ point\_count);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cubic_spline_ac44e4865ce219c8e14d2a617c7bca21f}{get\_segment}}(\textcolor{keywordtype}{double}\ of);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{class_cubic_spline_adb03a85f114425ebd0f5927a2933c13b}{CubicSpline}}(std::vector<double>\ x\_values,\ std::vector<double>\ y\_values);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_cubic_spline_a8dce74f66d0da52efafc1c2058780839}{operator()\ }}(std::vector<double>\ values);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}\ \{}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_path_a143a783635fa23e091294271cabaa996}{Pursuit}};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_path_a584c10916c801d1369b79b919b1f347c}{VirtualChassis}};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_path_a03781c43e9a1316e852389c6fe8e412f}{Chassis}};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_path_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00163\ \ \ \ \ std::vector<Coordinate2D>\ \mbox{\hyperlink{class_path_a25647056de9ecdcd9d12d83b0f037b7e}{points}};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_path_aa576714ae0ba4f03239e565c3dc7851a}{distance\_to\_end}}(\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ point);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_path_a0f39523e5eef044cfde11ddc23508c27}{distance\_to\_end}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_path_a926e1e266ebab17718731928a97447a7}{construct\_path}}(std::vector<double>\ x,\ std::vector<double>\ y,\ \textcolor{keywordtype}{int}\ point\_count);}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ \mbox{\hyperlink{class_path_a7154757b1c75b64b39527edc5b74ba43}{operator\ []\ }}(\textcolor{keywordtype}{int}\ idx);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_path_a7fba93e8ff0c968e51ea59d7a02960ae}{Path}}(std::vector<double>\ x,\ std::vector<double>\ y,\ \textcolor{keywordtype}{int}\ point\_count\ =\ -\/1);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{class_path_a068330da678be15ca1f899960382a1c9}{Path}}(std::vector<std::pair<double,\ double>>\ \mbox{\hyperlink{class_path_a25647056de9ecdcd9d12d83b0f037b7e}{points}},\ \textcolor{keywordtype}{int}\ point\_count\ =\ -\/1);}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{class_path_a13e46d8a8a98060bb07bf28910434b60}{Path}}(std::string\ filename);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_path_af0ac6fa41445afb1337da35c49b688cd}{serialize}}(std::string\ filename);}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \};}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ VEXLIBRARY\_PATH\_HPP}}
+
+\end{DoxyCode}

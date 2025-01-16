@@ -1,0 +1,36 @@
+\doxysection{pursuit.\+hpp}
+\hypertarget{pursuit_8hpp_source}{}\label{pursuit_8hpp_source}\index{autonomous/pursuit.hpp@{autonomous/pursuit.hpp}}
+\mbox{\hyperlink{pursuit_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VEXLIBRARY\_PURE\_PURSUIT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VEXLIBRARY\_PURE\_PURSUIT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{path_8hpp}{pathing/path.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pursuit_a8813ad3a090e0087d4bd3cec7a6ec089}{Pursuit}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pursuit_a85c93b508fcd290f2401ef5a9fd1f8ab}{last\_found\_idx}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_pursuit_a86bbf4d319e3e4e423985202b2e13ba2}{lookahead}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_path}{Path}}\ \mbox{\hyperlink{class_pursuit_accf376de1731be76a3fa6fa6de92f7b3}{path}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_pursuit_a8813ad3a090e0087d4bd3cec7a6ec089}{Pursuit}}(\mbox{\hyperlink{class_path}{Path}}\ \mbox{\hyperlink{class_pursuit_accf376de1731be76a3fa6fa6de92f7b3}{path}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a}{lookahead\_distance}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_pursuit_a6a0682206c9d9efd27efe93eb77f1c33}{Pursuit}}(std::vector<double>\ x,\ std::vector<double>\ y,\ \textcolor{keywordtype}{int}\ num\_points,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a}{lookahead\_distance}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ \&\ \mbox{\hyperlink{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a}{lookahead\_distance}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ \mbox{\hyperlink{class_pursuit_abd390c4590652fdcabd1b9896da5c754}{get\_target}}(\textcolor{keywordtype}{double}\ x\_bot,\ \textcolor{keywordtype}{double}\ y\_bot);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00104\ \ \ \ \ std::pair<double,\ double>\ \mbox{\hyperlink{class_pursuit_aa6e8ae5ddc9f67387035954a16593cb1}{get\_relative\_steering}}(\textcolor{keywordtype}{double}\ x\_bot,\ \textcolor{keywordtype}{double}\ y\_bot,\ \textcolor{keywordtype}{double}\ theta\_bot,\ \textcolor{keywordtype}{double}\ width\_bot);}
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ VEXLIBRARY\_PURE\_PURSUIT\_HPP}}
+
+\end{DoxyCode}

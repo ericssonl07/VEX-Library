@@ -1,0 +1,183 @@
+\doxysection{Pursuit Class Reference}
+\hypertarget{class_pursuit}{}\label{class_pursuit}\index{Pursuit@{Pursuit}}
+
+
+A class that implements the pure pursuit algorithm.  
+
+
+
+
+{\ttfamily \#include $<$pursuit.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pursuit_a8813ad3a090e0087d4bd3cec7a6ec089}{Pursuit}} (\mbox{\hyperlink{class_path}{Path}} \mbox{\hyperlink{class_pursuit_accf376de1731be76a3fa6fa6de92f7b3}{path}}, double \mbox{\hyperlink{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a}{lookahead\+\_\+distance}})
+\begin{DoxyCompactList}\small\item\em Construct a new {\ttfamily \doxylink{class_pursuit}{Pursuit}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pursuit_a6a0682206c9d9efd27efe93eb77f1c33}{Pursuit}} (std\+::vector$<$ double $>$ x, std\+::vector$<$ double $>$ y, int num\+\_\+points, double \mbox{\hyperlink{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a}{lookahead\+\_\+distance}})
+\begin{DoxyCompactList}\small\item\em Construct a new {\ttfamily \doxylink{class_pursuit}{Pursuit}} object. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a}{lookahead\+\_\+distance}} ()
+\begin{DoxyCompactList}\small\item\em Reference to the lookahead distance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}} \mbox{\hyperlink{class_pursuit_abd390c4590652fdcabd1b9896da5c754}{get\+\_\+target}} (double x\+\_\+bot, double y\+\_\+bot)
+\begin{DoxyCompactList}\small\item\em Get the target point. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{class_pursuit_aa6e8ae5ddc9f67387035954a16593cb1}{get\+\_\+relative\+\_\+steering}} (double x\+\_\+bot, double y\+\_\+bot, double theta\+\_\+bot, double width\+\_\+bot)
+\begin{DoxyCompactList}\small\item\em Get the relative steering angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_pursuit_a85c93b508fcd290f2401ef5a9fd1f8ab}{last\+\_\+found\+\_\+idx}}
+\begin{DoxyCompactList}\small\item\em The index of the last found point on the path. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_pursuit_a86bbf4d319e3e4e423985202b2e13ba2}{lookahead}}
+\begin{DoxyCompactList}\small\item\em The lookahead distance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_path}{Path}} \mbox{\hyperlink{class_pursuit_accf376de1731be76a3fa6fa6de92f7b3}{path}}
+\begin{DoxyCompactList}\small\item\em The {\ttfamily \doxylink{class_path}{Path}} to follow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that implements the pure pursuit algorithm. 
+
+The pure pursuit algorithm is a path tracking algorithm that calculates the steering angle of a robot to follow a path. It is based on the concept of a lookahead point, which is a point on the path that the robot is trying to reach, ahead of the robot\textquotesingle{}s current position by a certain distance.
+
+The algorithm calculates the steering angle based on the distance between the robot and the lookahead point, and the curvature of the path to reach the lookahead point.
+
+By constantly "{}pursuing"{} the lookahead point, which stays on the path a fixed distance ahead of the robot, the robot can follow the path accurately and smoothly as it constantly adjusts its steering angle to chase the moving target. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pursuit_a8813ad3a090e0087d4bd3cec7a6ec089}\index{Pursuit@{Pursuit}!Pursuit@{Pursuit}}
+\index{Pursuit@{Pursuit}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{Pursuit()}{Pursuit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_pursuit_a8813ad3a090e0087d4bd3cec7a6ec089} 
+Pursuit\+::\+Pursuit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_path}{Path}}}]{path}{, }\item[{double}]{lookahead\+\_\+distance}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new {\ttfamily \doxylink{class_pursuit}{Pursuit}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The {\ttfamily \doxylink{class_path}{Path}} object to follow. It is assumed that the {\ttfamily \doxylink{class_path}{Path}} object is in a valid state-\/ this will be true if the {\ttfamily \doxylink{class_pursuit}{Pursuit}} object is constructed by the {\ttfamily \doxylink{class_chassis}{Chassis}} object. If the \doxylink{class_path}{Path} object is not in a valid state, the behavior of the {\ttfamily \doxylink{class_pursuit}{Pursuit}} object is undefined. \\
+\hline
+{\em lookahead\+\_\+distance} & The lookahead distance, in units consistent with the rest of the program. This is the distance between the robot and the lookahead point. A higher lookahead distance will result in smoother tracing, but the robot may cut corners and cause unexpected behavior; a lower lookahead distance will result in tighter tracing, but the robot may oscillate violently, causing unstable behavior. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pursuit_a6a0682206c9d9efd27efe93eb77f1c33}\index{Pursuit@{Pursuit}!Pursuit@{Pursuit}}
+\index{Pursuit@{Pursuit}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{Pursuit()}{Pursuit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_pursuit_a6a0682206c9d9efd27efe93eb77f1c33} 
+Pursuit\+::\+Pursuit (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x}{, }\item[{std\+::vector$<$ double $>$}]{y}{, }\item[{int}]{num\+\_\+points}{, }\item[{double}]{lookahead\+\_\+distance}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new {\ttfamily \doxylink{class_pursuit}{Pursuit}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinates of the path, in units consistent with the rest of the program. \\
+\hline
+{\em y} & The y-\/coordinates of the path, in units consistent with the rest of the program. \\
+\hline
+{\em num\+\_\+points} & The number of points in the path which will be interpolated. This is used to calculate the path. There is a tradeoff\+: a lower number of points is faster to compute, but may result in a less smooth path; a higher number of points will result in a smoother path, but will require more computation. This overhead can be side-\/stepped by serializing the path using the {\ttfamily \doxylink{class_path_af0ac6fa41445afb1337da35c49b688cd}{Path\+::serialize}} function with a {\ttfamily .path} file extension. \\
+\hline
+{\em lookahead\+\_\+distance} & The lookahead distance. This is the distance between the robot and the lookahead point. A higher lookahead distance will result in smoother tracing, but the robot may cut corners and cause unexpected behavior; a lower lookahead distance will result in tighter tracing, but the robot may oscillate violently, causing unstable behavior. The lookahead distance should be in units consistent with the rest of the program. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pursuit_aa6e8ae5ddc9f67387035954a16593cb1}\index{Pursuit@{Pursuit}!get\_relative\_steering@{get\_relative\_steering}}
+\index{get\_relative\_steering@{get\_relative\_steering}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{get\_relative\_steering()}{get\_relative\_steering()}}
+{\footnotesize\ttfamily \label{class_pursuit_aa6e8ae5ddc9f67387035954a16593cb1} 
+std\+::pair$<$ double, double $>$ Pursuit\+::get\+\_\+relative\+\_\+steering (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+bot}{, }\item[{double}]{y\+\_\+bot}{, }\item[{double}]{theta\+\_\+bot}{, }\item[{double}]{width\+\_\+bot}{}\end{DoxyParamCaption})}
+
+
+
+Get the relative steering angle. 
+
+This function calculates the relative steering angle based on the robot\textquotesingle{}s width, current position, and orientation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+bot} & The x-\/coordinate of the robot, in units consistent with the rest of the program. \\
+\hline
+{\em y\+\_\+bot} & The y-\/coordinate of the robot, in units consistent with the rest of the program. \\
+\hline
+{\em theta\+\_\+bot} & The orientation of the robot, in radians. This value is unbounded (not capped to \mbox{[}0, 2π\mbox{]}), and may be negative. \\
+\hline
+{\em width\+\_\+bot} & The width of the robot, in units consistent with the rest of the program. This is the distance between the left and right wheels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair of doubles-\/ (L, R)-\/ representing the left and right steering values. Spinning the motor groups at these proportions will result in the robot turning towards the target point. 
+\end{DoxyReturn}
+\Hypertarget{class_pursuit_abd390c4590652fdcabd1b9896da5c754}\index{Pursuit@{Pursuit}!get\_target@{get\_target}}
+\index{get\_target@{get\_target}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{get\_target()}{get\_target()}}
+{\footnotesize\ttfamily \label{class_pursuit_abd390c4590652fdcabd1b9896da5c754} 
+\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}} Pursuit\+::get\+\_\+target (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+bot}{, }\item[{double}]{y\+\_\+bot}{}\end{DoxyParamCaption})}
+
+
+
+Get the target point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+bot} & The x-\/coordinate of the robot, in units consistent with the rest of the program. \\
+\hline
+{\em y\+\_\+bot} & The y-\/coordinate of the robot, in units consistent with the rest of the program.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The coordinate {\ttfamily (x, y)} with the property that {\ttfamily (x, y)} lies on the path and {\ttfamily sqrt((x -\/ x\+\_\+bot) \texorpdfstring{$^\wedge$}{\string^} 2 + (y -\/ y\+\_\+bot) \texorpdfstring{$^\wedge$}{\string^} 2) = lookahead\+\_\+distance}. 
+\end{DoxyReturn}
+\Hypertarget{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a}\index{Pursuit@{Pursuit}!lookahead\_distance@{lookahead\_distance}}
+\index{lookahead\_distance@{lookahead\_distance}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{lookahead\_distance()}{lookahead\_distance()}}
+{\footnotesize\ttfamily \label{class_pursuit_ac3b1c94df43019a0a6706207e6d3bc3a} 
+double \& Pursuit\+::lookahead\+\_\+distance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reference to the lookahead distance. 
+
+\begin{DoxyReturn}{Returns}
+The lookahead distance (modifiable reference) for get and set. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_pursuit_a85c93b508fcd290f2401ef5a9fd1f8ab}\index{Pursuit@{Pursuit}!last\_found\_idx@{last\_found\_idx}}
+\index{last\_found\_idx@{last\_found\_idx}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{last\_found\_idx}{last\_found\_idx}}
+{\footnotesize\ttfamily \label{class_pursuit_a85c93b508fcd290f2401ef5a9fd1f8ab} 
+int Pursuit\+::last\+\_\+found\+\_\+idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The index of the last found point on the path. 
+
+This variable allows the implementation of forward-\/searching the path without repetition and back-\/tracing. The advantage of forward-\/searching is that it allows the program to trace a closed path, whereas back-\/tracing would not (it would find the end point and return that). \Hypertarget{class_pursuit_a86bbf4d319e3e4e423985202b2e13ba2}\index{Pursuit@{Pursuit}!lookahead@{lookahead}}
+\index{lookahead@{lookahead}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{lookahead}{lookahead}}
+{\footnotesize\ttfamily \label{class_pursuit_a86bbf4d319e3e4e423985202b2e13ba2} 
+double Pursuit\+::lookahead\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The lookahead distance. 
+
+This is the distance between the robot and the lookahead point. \Hypertarget{class_pursuit_accf376de1731be76a3fa6fa6de92f7b3}\index{Pursuit@{Pursuit}!path@{path}}
+\index{path@{path}!Pursuit@{Pursuit}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{class_pursuit_accf376de1731be76a3fa6fa6de92f7b3} 
+\mbox{\hyperlink{class_path}{Path}} Pursuit\+::path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The {\ttfamily \doxylink{class_path}{Path}} to follow. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+autonomous/\mbox{\hyperlink{pursuit_8hpp}{pursuit.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,484 @@
+\doxysection{Virtual\+Odometry Class Reference}
+\hypertarget{class_virtual_odometry}{}\label{class_virtual_odometry}\index{VirtualOdometry@{VirtualOdometry}}
+
+
+The {\ttfamily \doxylink{class_virtual_odometry}{Virtual\+Odometry}} class tracks the position and rotation of the robot, in a virtual environment. A "{}virtual"{} environment is a minimal VEX development setup with no physical robot, and only two motors to simulate basic movement.  
+
+
+
+
+{\ttfamily \#include $<$virtual\+\_\+odometry.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_virtual_odometry_a6559c6d5b53721437a75e78a16f0a95b}{Virtual\+Odometry}} (\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_odometry_a82b36533c775ce91ac4b6e4f4fe60aa2}{left}}, \mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_odometry_a81ec72b1d4191a7fc430e1418def8467}{right}}, double \mbox{\hyperlink{class_virtual_odometry_a96e5760ccece5b9dc85a55041ec5afc9}{base\+\_\+width}}, double \mbox{\hyperlink{class_virtual_odometry_a2b7445d1fcce67f8a312ecf0d1c9b747}{wheel\+\_\+radius}}, double \mbox{\hyperlink{class_virtual_odometry_aa086ddccf51989e04d035c7a6b8d8ca0}{gear\+\_\+multiplier}}, int \mbox{\hyperlink{class_virtual_odometry_ab976456595d835479a2dbb322e85b3ee}{thread\+\_\+sleep}}=10)
+\begin{DoxyCompactList}\small\item\em The constructor for the \doxylink{class_virtual_odometry}{Virtual\+Odometry} class. Automatically construct tracking thread. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a33c07aab7c98c2e13f5d3c4c4798cc14}{x}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the x coordinate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a74390877a7281a03d4535bcb31c93eb2}{y}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the y coordinate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_aca3b6fd5fb70ad03e3deea67f963e525}{rotation}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virtual_odometry_a97928471c2032f0268c83a47ac47469d}{set\+\_\+pose}} (double \mbox{\hyperlink{class_virtual_odometry_a33c07aab7c98c2e13f5d3c4c4798cc14}{x}}, double \mbox{\hyperlink{class_virtual_odometry_a74390877a7281a03d4535bcb31c93eb2}{y}}, double \mbox{\hyperlink{class_virtual_odometry_aca3b6fd5fb70ad03e3deea67f963e525}{rotation}})
+\begin{DoxyCompactList}\small\item\em Set the position and rotation of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_virtual_odometry_a05da37ae24dd85160fcbee7d2d3acd43}{get\+\_\+left}} ()
+\begin{DoxyCompactList}\small\item\em Get the average value of the left encoders. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a1a6213d66bb9f1a6cadf9af332c7270f}{get\+\_\+right}} ()
+\begin{DoxyCompactList}\small\item\em Get the average value of the right encoders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vex\+::thread \mbox{\hyperlink{class_virtual_odometry_a5eb7594e87639e18ff2fdc0709ef83d0}{tracking}}
+\begin{DoxyCompactList}\small\item\em Thread to update the odometry object\textquotesingle{}s position and rotation. \end{DoxyCompactList}\item 
+vex\+::thread \mbox{\hyperlink{class_virtual_odometry_a2ffe471c5a2e6ba0edb60990087ebd00}{display}}
+\begin{DoxyCompactList}\small\item\em Thread to display the odometry object\textquotesingle{}s position and rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_virtual_odometry_a82b36533c775ce91ac4b6e4f4fe60aa2}{left}}
+\begin{DoxyCompactList}\small\item\em The left motor group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_virtual_odometry_a81ec72b1d4191a7fc430e1418def8467}{right}}
+\begin{DoxyCompactList}\small\item\em The right motor group. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a96e5760ccece5b9dc85a55041ec5afc9}{base\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em The width of the base. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a2b7445d1fcce67f8a312ecf0d1c9b747}{wheel\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em The radius of the wheel. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_aa086ddccf51989e04d035c7a6b8d8ca0}{gear\+\_\+multiplier}}
+\begin{DoxyCompactList}\small\item\em The gear ratio between the motor and the wheel. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_adef62e690450b8dde587bbffee5e78e2}{x\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The x position of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a145b05268923946fa5368715c199dae6}{y\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The y position of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a695b6ccdd9467dbd86231dca0beb5a92}{rotation\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em The rotation of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a493b7a867db707829f8d60cd0605303b}{left\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The measure of the left encoders. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_aaaecd0c41826b405d33bbc3b67765c92}{right\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The measure of the right encoders. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a2af86d6fa50be2a140cda597c521aa2d}{last\+\_\+left\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The last measure of the left encoders. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a3066977d2542a274714a6001c86377f3}{last\+\_\+right\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The last measure of the right encoders. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a2cd2a92a0d1c3960dfd1148d96c15fad}{delta\+\_\+left}}
+\begin{DoxyCompactList}\small\item\em The change in measure of the left encoders. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a9910e675fb9db721a5705bee2c3001d0}{delta\+\_\+right}}
+\begin{DoxyCompactList}\small\item\em The change in measure of the right encoders. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a7bb500d792d5175fe609d41cfa5ff7f2}{delta\+\_\+rotation}}
+\begin{DoxyCompactList}\small\item\em The change in rotation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_adb06883157e14585df74c63b8dac9e38}{center\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em The radius of the rotation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_ac335d2dabd01798bfb7c55b467f5df21}{local\+\_\+x\+\_\+translation}}
+\begin{DoxyCompactList}\small\item\em The local translation in the transformed basis. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_odometry_a4f81556a0aee368f2adf3113a498729f}{local\+\_\+offset}}
+\begin{DoxyCompactList}\small\item\em The local rotation in the transformed basis. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_virtual_odometry_ab976456595d835479a2dbb322e85b3ee}{thread\+\_\+sleep}}
+\begin{DoxyCompactList}\small\item\em The sleep time for the tracking thread, in microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_virtual_odometry_aff3ca92f84f34ba45318a185e078ef41}{virtual\+\_\+track}} (void \texorpdfstring{$\ast$}{*}o)
+\begin{DoxyCompactList}\small\item\em The tracking function to update the position and rotation of the robot. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_virtual_odometry_a1a6358c9f1214118df8f16a66e0b2eb2}{virtual\+\_\+display}} (void \texorpdfstring{$\ast$}{*}o)
+\begin{DoxyCompactList}\small\item\em Display function for odometry. Displays the position and rotation of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The {\ttfamily \doxylink{class_virtual_odometry}{Virtual\+Odometry}} class tracks the position and rotation of the robot, in a virtual environment. A "{}virtual"{} environment is a minimal VEX development setup with no physical robot, and only two motors to simulate basic movement. 
+
+\begin{DoxyAttention}{Attention}
+The {\ttfamily \doxylink{class_virtual_odometry}{Virtual\+Odometry}} class will only function within scope, so make sure it is managed by another object. By default, {\ttfamily \doxylink{class_virtual_chassis}{Virtual\+Chassis}} instances (and all instances of derived classes) manages the {\ttfamily \doxylink{class_virtual_odometry}{Virtual\+Odometry}} object. 
+\end{DoxyAttention}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_virtual_odometry_a6559c6d5b53721437a75e78a16f0a95b}\index{VirtualOdometry@{VirtualOdometry}!VirtualOdometry@{VirtualOdometry}}
+\index{VirtualOdometry@{VirtualOdometry}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{VirtualOdometry()}{VirtualOdometry()}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a6559c6d5b53721437a75e78a16f0a95b} 
+Virtual\+Odometry\+::\+Virtual\+Odometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}}]{left}{, }\item[{\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}}]{right}{, }\item[{double}]{base\+\_\+width}{, }\item[{double}]{wheel\+\_\+radius}{, }\item[{double}]{gear\+\_\+multiplier}{, }\item[{int}]{thread\+\_\+sleep}{ = {\ttfamily 10}}\end{DoxyParamCaption})}
+
+
+
+The constructor for the \doxylink{class_virtual_odometry}{Virtual\+Odometry} class. Automatically construct tracking thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The left motor group. \\
+\hline
+{\em right} & The right motor group. \\
+\hline
+{\em base\+\_\+width} & The width of the base. \\
+\hline
+{\em wheel\+\_\+radius} & The radius of the wheel. \\
+\hline
+{\em gear\+\_\+multiplier} & The multiplier associated with the gear ratio and motor cartridges. \\
+\hline
+{\em thread\+\_\+sleep} & The sleep time for the tracking thread, in microseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+All units must be consistent with odometry. 
+\end{DoxyAttention}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_virtual_odometry_a05da37ae24dd85160fcbee7d2d3acd43}\index{VirtualOdometry@{VirtualOdometry}!get\_left@{get\_left}}
+\index{get\_left@{get\_left}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{get\_left()}{get\_left()}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a05da37ae24dd85160fcbee7d2d3acd43} 
+double Virtual\+Odometry\+::get\+\_\+left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the average value of the left encoders. 
+
+\begin{DoxyReturn}{Returns}
+The average value as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_virtual_odometry_a1a6213d66bb9f1a6cadf9af332c7270f}\index{VirtualOdometry@{VirtualOdometry}!get\_right@{get\_right}}
+\index{get\_right@{get\_right}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{get\_right()}{get\_right()}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a1a6213d66bb9f1a6cadf9af332c7270f} 
+double Virtual\+Odometry\+::get\+\_\+right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the average value of the right encoders. 
+
+\begin{DoxyReturn}{Returns}
+The average value as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_virtual_odometry_aca3b6fd5fb70ad03e3deea67f963e525}\index{VirtualOdometry@{VirtualOdometry}!rotation@{rotation}}
+\index{rotation@{rotation}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_aca3b6fd5fb70ad03e3deea67f963e525} 
+double Virtual\+Odometry\+::rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the rotation. 
+
+\begin{DoxyReturn}{Returns}
+The rotation as a double, in radians. 
+\end{DoxyReturn}
+\Hypertarget{class_virtual_odometry_a97928471c2032f0268c83a47ac47469d}\index{VirtualOdometry@{VirtualOdometry}!set\_pose@{set\_pose}}
+\index{set\_pose@{set\_pose}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{set\_pose()}{set\_pose()}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a97928471c2032f0268c83a47ac47469d} 
+void Virtual\+Odometry\+::set\+\_\+pose (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{, }\item[{double}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Set the position and rotation of the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate. \\
+\hline
+{\em y} & The y coordinate. \\
+\hline
+{\em rotation} & The rotation, in radians. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_virtual_odometry_a33c07aab7c98c2e13f5d3c4c4798cc14}\index{VirtualOdometry@{VirtualOdometry}!x@{x}}
+\index{x@{x}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a33c07aab7c98c2e13f5d3c4c4798cc14} 
+double Virtual\+Odometry\+::x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the x coordinate. 
+
+\begin{DoxyReturn}{Returns}
+The x coordinate as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_virtual_odometry_a74390877a7281a03d4535bcb31c93eb2}\index{VirtualOdometry@{VirtualOdometry}!y@{y}}
+\index{y@{y}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a74390877a7281a03d4535bcb31c93eb2} 
+double Virtual\+Odometry\+::y (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the y coordinate. 
+
+\begin{DoxyReturn}{Returns}
+The y coordinate as a double. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_virtual_odometry_a1a6358c9f1214118df8f16a66e0b2eb2}\index{VirtualOdometry@{VirtualOdometry}!virtual\_display@{virtual\_display}}
+\index{virtual\_display@{virtual\_display}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{virtual\_display}{virtual\_display}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a1a6358c9f1214118df8f16a66e0b2eb2} 
+int virtual\+\_\+display (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Display function for odometry. Displays the position and rotation of the robot. 
+
+This function is used by the display thread, which is initialized by the odometry object constructor. \begin{DoxyAttention}{Attention}
+This function is NOT meant to be called directly. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The odometry object as a void\texorpdfstring{$\ast$}{*}. Immediately cast back to an Virtual\+Odometry\texorpdfstring{$\ast$}{*}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_virtual_odometry_aff3ca92f84f34ba45318a185e078ef41}\index{VirtualOdometry@{VirtualOdometry}!virtual\_track@{virtual\_track}}
+\index{virtual\_track@{virtual\_track}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{virtual\_track}{virtual\_track}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_aff3ca92f84f34ba45318a185e078ef41} 
+int virtual\+\_\+track (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The tracking function to update the position and rotation of the robot. 
+
+This function is used by the tracking thread, which is initialized by the odometry object constructor. \begin{DoxyAttention}{Attention}
+This function is NOT meant to be called directly. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The odometry object to track as a void pointer. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_virtual_odometry_a96e5760ccece5b9dc85a55041ec5afc9}\index{VirtualOdometry@{VirtualOdometry}!base\_width@{base\_width}}
+\index{base\_width@{base\_width}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{base\_width}{base\_width}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a96e5760ccece5b9dc85a55041ec5afc9} 
+double Virtual\+Odometry\+::base\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The width of the base. 
+
+\begin{DoxyAttention}{Attention}
+Units must be consistent with wheel\+\_\+radius. 
+\end{DoxyAttention}
+\Hypertarget{class_virtual_odometry_adb06883157e14585df74c63b8dac9e38}\index{VirtualOdometry@{VirtualOdometry}!center\_radius@{center\_radius}}
+\index{center\_radius@{center\_radius}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{center\_radius}{center\_radius}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_adb06883157e14585df74c63b8dac9e38} 
+double Virtual\+Odometry\+::center\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The radius of the rotation. 
+
+\Hypertarget{class_virtual_odometry_a2cd2a92a0d1c3960dfd1148d96c15fad}\index{VirtualOdometry@{VirtualOdometry}!delta\_left@{delta\_left}}
+\index{delta\_left@{delta\_left}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{delta\_left}{delta\_left}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a2cd2a92a0d1c3960dfd1148d96c15fad} 
+double Virtual\+Odometry\+::delta\+\_\+left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The change in measure of the left encoders. 
+
+\Hypertarget{class_virtual_odometry_a9910e675fb9db721a5705bee2c3001d0}\index{VirtualOdometry@{VirtualOdometry}!delta\_right@{delta\_right}}
+\index{delta\_right@{delta\_right}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{delta\_right}{delta\_right}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a9910e675fb9db721a5705bee2c3001d0} 
+double Virtual\+Odometry\+::delta\+\_\+right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The change in measure of the right encoders. 
+
+\Hypertarget{class_virtual_odometry_a7bb500d792d5175fe609d41cfa5ff7f2}\index{VirtualOdometry@{VirtualOdometry}!delta\_rotation@{delta\_rotation}}
+\index{delta\_rotation@{delta\_rotation}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{delta\_rotation}{delta\_rotation}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a7bb500d792d5175fe609d41cfa5ff7f2} 
+double Virtual\+Odometry\+::delta\+\_\+rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The change in rotation. 
+
+\begin{DoxyAttention}{Attention}
+Units are in radians. 
+\end{DoxyAttention}
+\Hypertarget{class_virtual_odometry_a2ffe471c5a2e6ba0edb60990087ebd00}\index{VirtualOdometry@{VirtualOdometry}!display@{display}}
+\index{display@{display}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a2ffe471c5a2e6ba0edb60990087ebd00} 
+vex\+::thread Virtual\+Odometry\+::display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thread to display the odometry object\textquotesingle{}s position and rotation. 
+
+\begin{DoxyAttention}{Attention}
+This thread is managed by the \doxylink{class_odometry}{Odometry} object. It does NOT detach; therefore, the \doxylink{class_odometry}{Odometry} object must remain in scope throughout the desired period of coordinate tracking, either through management by another object or through the use of a blocking function. By default, the \doxylink{class_odometry}{Odometry} object is managed by the \doxylink{class_chassis}{Chassis} object (and all derived classes). 
+\end{DoxyAttention}
+\Hypertarget{class_virtual_odometry_aa086ddccf51989e04d035c7a6b8d8ca0}\index{VirtualOdometry@{VirtualOdometry}!gear\_multiplier@{gear\_multiplier}}
+\index{gear\_multiplier@{gear\_multiplier}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{gear\_multiplier}{gear\_multiplier}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_aa086ddccf51989e04d035c7a6b8d8ca0} 
+double Virtual\+Odometry\+::gear\+\_\+multiplier\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The gear ratio between the motor and the wheel. 
+
+\Hypertarget{class_virtual_odometry_a2af86d6fa50be2a140cda597c521aa2d}\index{VirtualOdometry@{VirtualOdometry}!last\_left\_position@{last\_left\_position}}
+\index{last\_left\_position@{last\_left\_position}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{last\_left\_position}{last\_left\_position}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a2af86d6fa50be2a140cda597c521aa2d} 
+double Virtual\+Odometry\+::last\+\_\+left\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The last measure of the left encoders. 
+
+\Hypertarget{class_virtual_odometry_a3066977d2542a274714a6001c86377f3}\index{VirtualOdometry@{VirtualOdometry}!last\_right\_position@{last\_right\_position}}
+\index{last\_right\_position@{last\_right\_position}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{last\_right\_position}{last\_right\_position}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a3066977d2542a274714a6001c86377f3} 
+double Virtual\+Odometry\+::last\+\_\+right\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The last measure of the right encoders. 
+
+\Hypertarget{class_virtual_odometry_a82b36533c775ce91ac4b6e4f4fe60aa2}\index{VirtualOdometry@{VirtualOdometry}!left@{left}}
+\index{left@{left}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a82b36533c775ce91ac4b6e4f4fe60aa2} 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}}\texorpdfstring{$\ast$}{*} Virtual\+Odometry\+::left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left motor group. 
+
+\Hypertarget{class_virtual_odometry_a493b7a867db707829f8d60cd0605303b}\index{VirtualOdometry@{VirtualOdometry}!left\_position@{left\_position}}
+\index{left\_position@{left\_position}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{left\_position}{left\_position}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a493b7a867db707829f8d60cd0605303b} 
+double Virtual\+Odometry\+::left\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The measure of the left encoders. 
+
+\Hypertarget{class_virtual_odometry_a4f81556a0aee368f2adf3113a498729f}\index{VirtualOdometry@{VirtualOdometry}!local\_offset@{local\_offset}}
+\index{local\_offset@{local\_offset}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{local\_offset}{local\_offset}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a4f81556a0aee368f2adf3113a498729f} 
+double Virtual\+Odometry\+::local\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The local rotation in the transformed basis. 
+
+\Hypertarget{class_virtual_odometry_ac335d2dabd01798bfb7c55b467f5df21}\index{VirtualOdometry@{VirtualOdometry}!local\_x\_translation@{local\_x\_translation}}
+\index{local\_x\_translation@{local\_x\_translation}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{local\_x\_translation}{local\_x\_translation}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_ac335d2dabd01798bfb7c55b467f5df21} 
+double Virtual\+Odometry\+::local\+\_\+x\+\_\+translation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The local translation in the transformed basis. 
+
+\Hypertarget{class_virtual_odometry_a81ec72b1d4191a7fc430e1418def8467}\index{VirtualOdometry@{VirtualOdometry}!right@{right}}
+\index{right@{right}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a81ec72b1d4191a7fc430e1418def8467} 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}}\texorpdfstring{$\ast$}{*} Virtual\+Odometry\+::right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right motor group. 
+
+\Hypertarget{class_virtual_odometry_aaaecd0c41826b405d33bbc3b67765c92}\index{VirtualOdometry@{VirtualOdometry}!right\_position@{right\_position}}
+\index{right\_position@{right\_position}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{right\_position}{right\_position}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_aaaecd0c41826b405d33bbc3b67765c92} 
+double Virtual\+Odometry\+::right\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The measure of the right encoders. 
+
+\Hypertarget{class_virtual_odometry_a695b6ccdd9467dbd86231dca0beb5a92}\index{VirtualOdometry@{VirtualOdometry}!rotation\_value@{rotation\_value}}
+\index{rotation\_value@{rotation\_value}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{rotation\_value}{rotation\_value}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a695b6ccdd9467dbd86231dca0beb5a92} 
+double Virtual\+Odometry\+::rotation\+\_\+value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The rotation of the robot. 
+
+\begin{DoxyAttention}{Attention}
+Units are in radians. 
+\end{DoxyAttention}
+\Hypertarget{class_virtual_odometry_ab976456595d835479a2dbb322e85b3ee}\index{VirtualOdometry@{VirtualOdometry}!thread\_sleep@{thread\_sleep}}
+\index{thread\_sleep@{thread\_sleep}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{thread\_sleep}{thread\_sleep}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_ab976456595d835479a2dbb322e85b3ee} 
+int Virtual\+Odometry\+::thread\+\_\+sleep\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The sleep time for the tracking thread, in microseconds. 
+
+\Hypertarget{class_virtual_odometry_a5eb7594e87639e18ff2fdc0709ef83d0}\index{VirtualOdometry@{VirtualOdometry}!tracking@{tracking}}
+\index{tracking@{tracking}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{tracking}{tracking}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a5eb7594e87639e18ff2fdc0709ef83d0} 
+vex\+::thread Virtual\+Odometry\+::tracking\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thread to update the odometry object\textquotesingle{}s position and rotation. 
+
+\begin{DoxyAttention}{Attention}
+This thread is managed by the \doxylink{class_odometry}{Odometry} object. It does NOT detach; therefore, the \doxylink{class_odometry}{Odometry} object must remain in scope throughout the desired period of coordinate tracking, either through management by another object or through the use of a blocking function. By default, the \doxylink{class_odometry}{Odometry} object is managed by the \doxylink{class_chassis}{Chassis} object (and all derived classes). 
+\end{DoxyAttention}
+\Hypertarget{class_virtual_odometry_a2b7445d1fcce67f8a312ecf0d1c9b747}\index{VirtualOdometry@{VirtualOdometry}!wheel\_radius@{wheel\_radius}}
+\index{wheel\_radius@{wheel\_radius}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{wheel\_radius}{wheel\_radius}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a2b7445d1fcce67f8a312ecf0d1c9b747} 
+double Virtual\+Odometry\+::wheel\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The radius of the wheel. 
+
+\begin{DoxyAttention}{Attention}
+Units must be consistent with base\+\_\+width. 
+\end{DoxyAttention}
+\Hypertarget{class_virtual_odometry_adef62e690450b8dde587bbffee5e78e2}\index{VirtualOdometry@{VirtualOdometry}!x\_position@{x\_position}}
+\index{x\_position@{x\_position}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{x\_position}{x\_position}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_adef62e690450b8dde587bbffee5e78e2} 
+double Virtual\+Odometry\+::x\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The x position of the robot. 
+
+\Hypertarget{class_virtual_odometry_a145b05268923946fa5368715c199dae6}\index{VirtualOdometry@{VirtualOdometry}!y\_position@{y\_position}}
+\index{y\_position@{y\_position}!VirtualOdometry@{VirtualOdometry}}
+\doxysubsubsection{\texorpdfstring{y\_position}{y\_position}}
+{\footnotesize\ttfamily \label{class_virtual_odometry_a145b05268923946fa5368715c199dae6} 
+double Virtual\+Odometry\+::y\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The y position of the robot. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+autonomous/\mbox{\hyperlink{virtual__odometry_8hpp}{virtual\+\_\+odometry.\+hpp}}\end{DoxyCompactItemize}

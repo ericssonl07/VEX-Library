@@ -1,0 +1,147 @@
+\doxysection{Virtual\+High\+Stakes\+Chassis Class Reference}
+\hypertarget{class_virtual_high_stakes_chassis}{}\label{class_virtual_high_stakes_chassis}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+
+
+{\ttfamily \#include $<$virtual\+\_\+highstakes\+\_\+chassis.\+hpp$>$}
+
+Inheritance diagram for Virtual\+High\+Stakes\+Chassis\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_virtual_high_stakes_chassis}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_virtual_high_stakes_chassis_a54f408ee7aa9aa9a3f7b4489d61b2396}{Virtual\+High\+Stakes\+Chassis}} (\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_chassis_a82ec793347a2bbb74865283989e79bdd}{left}}, \mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_chassis_a16f2da9d052702bbf7169a4d6f03ed2e}{right}}, vex\+::motor \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_high_stakes_chassis_a25da2d792e98069badd527916adbcfa5}{intake}}, vex\+::optical \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\+\_\+sensor}}, vex\+::color \texorpdfstring{$\ast$}{*}team\+\_\+color, double \mbox{\hyperlink{class_virtual_chassis_acd60fd1dbd353103e7b49e01a26cbcb1}{base\+\_\+width}}, double \mbox{\hyperlink{class_virtual_chassis_a5c73874de470e09395ce5dd72f6806a8}{wheel\+\_\+radius}}, double \mbox{\hyperlink{class_virtual_chassis_afdb2a57a7f45c2dce5eb00a7caa9b099}{pursuit\+\_\+distance}}, double \mbox{\hyperlink{class_virtual_chassis_a27d3f2847a7e6b538d1df541840e5f7d}{gear\+\_\+multiplier}}, double initial\+\_\+x, double initial\+\_\+y, double initial\+\_\+rotation, int \mbox{\hyperlink{class_virtual_chassis_a38d6c3f5478adb5c71031c1e020c741b}{thread\+\_\+sleep}})
+\item 
+void \mbox{\hyperlink{class_virtual_high_stakes_chassis_a25da2d792e98069badd527916adbcfa5}{intake}} (int for\+\_\+msec, double power)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_virtual_chassis}{Virtual\+Chassis}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_virtual_chassis_a25b332d971873c716d695f1c89030c36}{Virtual\+Chassis}} (\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_chassis_a82ec793347a2bbb74865283989e79bdd}{left}}, \mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_virtual_chassis_a16f2da9d052702bbf7169a4d6f03ed2e}{right}}, double \mbox{\hyperlink{class_virtual_chassis_acd60fd1dbd353103e7b49e01a26cbcb1}{base\+\_\+width}}, double \mbox{\hyperlink{class_virtual_chassis_a5c73874de470e09395ce5dd72f6806a8}{wheel\+\_\+radius}}, double \mbox{\hyperlink{class_virtual_chassis_afdb2a57a7f45c2dce5eb00a7caa9b099}{pursuit\+\_\+distance}}, double \mbox{\hyperlink{class_virtual_chassis_a27d3f2847a7e6b538d1df541840e5f7d}{gear\+\_\+multiplier}}, double initial\+\_\+x=0.\+0, double initial\+\_\+y=0.\+0, double initial\+\_\+rotation=0.\+0, int \mbox{\hyperlink{class_virtual_chassis_a38d6c3f5478adb5c71031c1e020c741b}{thread\+\_\+sleep}}=10)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_virtual_chassis}{Virtual\+Chassis} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virtual_chassis_ae335d0b3c197f899bfa0c50fc1017b91}{follow\+\_\+path}} (std\+::vector$<$ double $>$ \mbox{\hyperlink{class_virtual_chassis_ab3b3d66d5c8912163d5400d84da9674b}{x}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{class_virtual_chassis_abfa5a1475914b8d6740eae184311e74b}{y}}, double tolerance, double speed\+\_\+factor=1.\+0, int num\+\_\+points=50)
+\begin{DoxyCompactList}\small\item\em Follow the path interpolated by the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virtual_chassis_a1a2323d398e3cd8c6fd6500d1829131f}{follow\+\_\+path}} (std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ points, double tolerance, double speed\+\_\+factor=1.\+0, int point\+\_\+count=50)
+\begin{DoxyCompactList}\small\item\em Follow the given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virtual_chassis_a5b0e0d29fc3e1d8a24711b24ef7c5f9c}{follow\+\_\+path}} (\mbox{\hyperlink{class_path}{Path}} path, double tolerance=5.\+0, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Follow the given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virtual_chassis_a159e5f6e78893e86b8e67809f7511f52}{turn\+\_\+to}} (double angle, double tolerance=0.\+01, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Turn to the given angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virtual_chassis_a61d7d33a5b2a5596e5bcd3b2883fb5bd}{turn}} (double angle, double tolerance=0.\+01, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Turn by the given angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virtual_chassis_a69a0468bd00573a5f49a41d5fef21365}{forward}} (double distance, double tolerance=5.\+0, double speed\+\_\+factor=1.\+0)
+\begin{DoxyCompactList}\small\item\em Move the robot by the given distance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_chassis_ab3b3d66d5c8912163d5400d84da9674b}{x}} ()
+\begin{DoxyCompactList}\small\item\em Get the x-\/coordinate of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_chassis_abfa5a1475914b8d6740eae184311e74b}{y}} ()
+\begin{DoxyCompactList}\small\item\em Get the y-\/coordinate of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_chassis_ad49d0996f4f6ad259f4437e3d66c65a1}{rotation}} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_virtual_high_stakes_chassis_ade70c1dd1a2ac9ada3a6635d4bd97ed7}{intake\+\_\+impl}} (void \texorpdfstring{$\ast$}{*}obj)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vex\+::motor \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06}{intake\+\_\+motor}}
+\item 
+vex\+::optical \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\+\_\+sensor}}
+\item 
+vex\+::color \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_virtual_high_stakes_chassis_a7e329035192952232e403cce37faa050}{autonomous\+\_\+side}}
+\item 
+int \mbox{\hyperlink{class_virtual_high_stakes_chassis_a3df913d881375948b813ae0e8e1dd8cf}{intake\+\_\+for\+\_\+msec\+\_\+impl}}
+\item 
+double \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae858b3303f05a5d15bdff27f1c81ee05}{intake\+\_\+power\+\_\+impl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_virtual_chassis}{Virtual\+Chassis}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_virtual_chassis_a751ff282732337124f4a864b12a3c0af}{basic\+\_\+control}} (void \texorpdfstring{$\ast$}{*}instance)
+\begin{DoxyCompactList}\small\item\em Basic controller movement-\/ should be threaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_virtual_chassis}{Virtual\+Chassis}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_virtual_chassis_a82ec793347a2bbb74865283989e79bdd}{left}}
+\begin{DoxyCompactList}\small\item\em The left motor group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_virtual_chassis_a16f2da9d052702bbf7169a4d6f03ed2e}{right}}
+\begin{DoxyCompactList}\small\item\em The right motor group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_virtual_odometry}{Virtual\+Odometry}} \mbox{\hyperlink{class_virtual_chassis_af3a8679c82f8859d1420ff76ef63bb3a}{odom}}
+\begin{DoxyCompactList}\small\item\em The odometry device to track position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_chassis_acd60fd1dbd353103e7b49e01a26cbcb1}{base\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em The width of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_chassis_a5c73874de470e09395ce5dd72f6806a8}{wheel\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em The radius of the wheel. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_chassis_afdb2a57a7f45c2dce5eb00a7caa9b099}{pursuit\+\_\+distance}}
+\begin{DoxyCompactList}\small\item\em The look-\/ahead distance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_virtual_chassis_a27d3f2847a7e6b538d1df541840e5f7d}{gear\+\_\+multiplier}}
+\begin{DoxyCompactList}\small\item\em The gear multiplier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_virtual_chassis_a38d6c3f5478adb5c71031c1e020c741b}{thread\+\_\+sleep}}
+\begin{DoxyCompactList}\small\item\em The sleep time for the tracking thread, in microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_virtual_high_stakes_chassis_a54f408ee7aa9aa9a3f7b4489d61b2396}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{VirtualHighStakesChassis()}{VirtualHighStakesChassis()}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_a54f408ee7aa9aa9a3f7b4489d61b2396} 
+Virtual\+High\+Stakes\+Chassis\+::\+Virtual\+High\+Stakes\+Chassis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}}]{left}{, }\item[{\mbox{\hyperlink{class_motor_group}{Motor\+Group}} \texorpdfstring{$\ast$}{*}}]{right}{, }\item[{vex\+::motor \texorpdfstring{$\ast$}{*}}]{intake}{, }\item[{vex\+::optical \texorpdfstring{$\ast$}{*}}]{color\+\_\+sensor}{, }\item[{vex\+::color \texorpdfstring{$\ast$}{*}}]{team\+\_\+color}{, }\item[{double}]{base\+\_\+width}{, }\item[{double}]{wheel\+\_\+radius}{, }\item[{double}]{pursuit\+\_\+distance}{, }\item[{double}]{gear\+\_\+multiplier}{, }\item[{double}]{initial\+\_\+x}{, }\item[{double}]{initial\+\_\+y}{, }\item[{double}]{initial\+\_\+rotation}{, }\item[{int}]{thread\+\_\+sleep}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_virtual_high_stakes_chassis_a25da2d792e98069badd527916adbcfa5}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!intake@{intake}}
+\index{intake@{intake}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{intake()}{intake()}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_a25da2d792e98069badd527916adbcfa5} 
+void Virtual\+High\+Stakes\+Chassis\+::intake (\begin{DoxyParamCaption}\item[{int}]{for\+\_\+msec}{, }\item[{double}]{power}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_virtual_high_stakes_chassis_ade70c1dd1a2ac9ada3a6635d4bd97ed7}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!intake\_impl@{intake\_impl}}
+\index{intake\_impl@{intake\_impl}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{intake\_impl()}{intake\_impl()}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_ade70c1dd1a2ac9ada3a6635d4bd97ed7} 
+static void Virtual\+High\+Stakes\+Chassis\+::intake\+\_\+impl (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_virtual_high_stakes_chassis_a7e329035192952232e403cce37faa050}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!autonomous\_side@{autonomous\_side}}
+\index{autonomous\_side@{autonomous\_side}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{autonomous\_side}{autonomous\_side}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_a7e329035192952232e403cce37faa050} 
+vex\+::color\texorpdfstring{$\ast$}{*} Virtual\+High\+Stakes\+Chassis\+::autonomous\+\_\+side\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!color\_sensor@{color\_sensor}}
+\index{color\_sensor@{color\_sensor}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{color\_sensor}{color\_sensor}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246} 
+vex\+::optical\texorpdfstring{$\ast$}{*} Virtual\+High\+Stakes\+Chassis\+::color\+\_\+sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_virtual_high_stakes_chassis_a3df913d881375948b813ae0e8e1dd8cf}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!intake\_for\_msec\_impl@{intake\_for\_msec\_impl}}
+\index{intake\_for\_msec\_impl@{intake\_for\_msec\_impl}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{intake\_for\_msec\_impl}{intake\_for\_msec\_impl}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_a3df913d881375948b813ae0e8e1dd8cf} 
+int Virtual\+High\+Stakes\+Chassis\+::intake\+\_\+for\+\_\+msec\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!intake\_motor@{intake\_motor}}
+\index{intake\_motor@{intake\_motor}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{intake\_motor}{intake\_motor}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06} 
+vex\+::motor\texorpdfstring{$\ast$}{*} Virtual\+High\+Stakes\+Chassis\+::intake\+\_\+motor\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_virtual_high_stakes_chassis_ae858b3303f05a5d15bdff27f1c81ee05}\index{VirtualHighStakesChassis@{VirtualHighStakesChassis}!intake\_power\_impl@{intake\_power\_impl}}
+\index{intake\_power\_impl@{intake\_power\_impl}!VirtualHighStakesChassis@{VirtualHighStakesChassis}}
+\doxysubsubsection{\texorpdfstring{intake\_power\_impl}{intake\_power\_impl}}
+{\footnotesize\ttfamily \label{class_virtual_high_stakes_chassis_ae858b3303f05a5d15bdff27f1c81ee05} 
+double Virtual\+High\+Stakes\+Chassis\+::intake\+\_\+power\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{virtual__highstakes__chassis_8hpp}{virtual\+\_\+highstakes\+\_\+chassis.\+hpp}}\end{DoxyCompactItemize}

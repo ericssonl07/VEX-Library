@@ -1,0 +1,121 @@
+\doxysection{pathing/matrix.hpp File Reference}
+\hypertarget{matrix_8hpp}{}\label{matrix_8hpp}\index{pathing/matrix.hpp@{pathing/matrix.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_matrix}{Matrix}}
+\begin{DoxyCompactList}\small\item\em A class to represent a mathematical matrix and perform operations on it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{matrix_8hpp_a09ba95faa3da29793657ad18e970e05e}{identity}} (int n\+\_\+dimensions)
+\begin{DoxyCompactList}\small\item\em Identity matrix constructor. The identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{matrix_8hpp_aeb6b10cb32507ac24b51af6f811672cc}{zeros}} (int row\+\_\+count, int column\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Zeros matrix constructor. The zeros matrix is a matrix with all elements set to zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{matrix_8hpp_ad01ef2e4f2f0c784bdf226f75614c391}{zeros\+\_\+like}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&reference\+\_\+matrix)
+\begin{DoxyCompactList}\small\item\em Zeros matrix constructor. The zeros matrix is a matrix with all elements set to zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{matrix_8hpp_a176962b066e9691eb2d8399872464c6f}{ones}} (int row\+\_\+count, int column\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Ones matrix constructor. The ones matrix is a matrix with all elements set to one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{matrix_8hpp_a97a3e02365fcc2d19f7f30ab37f4d74b}{ones\+\_\+like}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&reference\+\_\+matrix)
+\begin{DoxyCompactList}\small\item\em Ones matrix constructor. The ones matrix is a matrix with all elements set to one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{matrix_8hpp_a09ba95faa3da29793657ad18e970e05e}\index{matrix.hpp@{matrix.hpp}!identity@{identity}}
+\index{identity@{identity}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a09ba95faa3da29793657ad18e970e05e} 
+\mbox{\hyperlink{class_matrix}{Matrix}} identity (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+dimensions}{}\end{DoxyParamCaption})}
+
+
+
+Identity matrix constructor. The identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+dimensions} & The number of dimensions of the identity matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The identity matrix of the given dimensions. 
+\end{DoxyReturn}
+\Hypertarget{matrix_8hpp_a176962b066e9691eb2d8399872464c6f}\index{matrix.hpp@{matrix.hpp}!ones@{ones}}
+\index{ones@{ones}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{ones()}{ones()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a176962b066e9691eb2d8399872464c6f} 
+\mbox{\hyperlink{class_matrix}{Matrix}} ones (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+count}{, }\item[{int}]{column\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Ones matrix constructor. The ones matrix is a matrix with all elements set to one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+\_\+count} & The number of rows of the ones matrix. \\
+\hline
+{\em column\+\_\+count} & The number of columns of the ones matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ones matrix of the given dimensions. 
+\end{DoxyReturn}
+\Hypertarget{matrix_8hpp_a97a3e02365fcc2d19f7f30ab37f4d74b}\index{matrix.hpp@{matrix.hpp}!ones\_like@{ones\_like}}
+\index{ones\_like@{ones\_like}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{ones\_like()}{ones\_like()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a97a3e02365fcc2d19f7f30ab37f4d74b} 
+\mbox{\hyperlink{class_matrix}{Matrix}} ones\+\_\+like (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{reference\+\_\+matrix}{}\end{DoxyParamCaption})}
+
+
+
+Ones matrix constructor. The ones matrix is a matrix with all elements set to one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reference\+\_\+matrix} & The matrix to copy the dimensions from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ones matrix of the same dimensions as the reference matrix. 
+\end{DoxyReturn}
+\Hypertarget{matrix_8hpp_aeb6b10cb32507ac24b51af6f811672cc}\index{matrix.hpp@{matrix.hpp}!zeros@{zeros}}
+\index{zeros@{zeros}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_aeb6b10cb32507ac24b51af6f811672cc} 
+\mbox{\hyperlink{class_matrix}{Matrix}} zeros (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+count}{, }\item[{int}]{column\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Zeros matrix constructor. The zeros matrix is a matrix with all elements set to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+\_\+count} & The number of rows of the zeros matrix. \\
+\hline
+{\em column\+\_\+count} & The number of columns of the zeros matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The zeros matrix of the given dimensions. 
+\end{DoxyReturn}
+\Hypertarget{matrix_8hpp_ad01ef2e4f2f0c784bdf226f75614c391}\index{matrix.hpp@{matrix.hpp}!zeros\_like@{zeros\_like}}
+\index{zeros\_like@{zeros\_like}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{zeros\_like()}{zeros\_like()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_ad01ef2e4f2f0c784bdf226f75614c391} 
+\mbox{\hyperlink{class_matrix}{Matrix}} zeros\+\_\+like (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{reference\+\_\+matrix}{}\end{DoxyParamCaption})}
+
+
+
+Zeros matrix constructor. The zeros matrix is a matrix with all elements set to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reference\+\_\+matrix} & The matrix to copy the dimensions from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The zeros matrix of the same dimensions as the reference matrix. 
+\end{DoxyReturn}

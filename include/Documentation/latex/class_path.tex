@@ -1,0 +1,262 @@
+\doxysection{Path Class Reference}
+\hypertarget{class_path}{}\label{class_path}\index{Path@{Path}}
+
+
+{\ttfamily \#include $<$path.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}} \mbox{\hyperlink{class_path_a7154757b1c75b64b39527edc5b74ba43}{operator\mbox{[}$\,$\mbox{]}}} (int idx)
+\begin{DoxyCompactList}\small\item\em Get the point at the given index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the {\ttfamily \doxylink{class_path}{Path}} class. Initializes the path with no points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_path_a7fba93e8ff0c968e51ea59d7a02960ae}{Path}} (std\+::vector$<$ double $>$ x, std\+::vector$<$ double $>$ y, int point\+\_\+count=-\/1)
+\begin{DoxyCompactList}\small\item\em Construct a path from a set of points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_path_a068330da678be15ca1f899960382a1c9}{Path}} (std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{class_path_a25647056de9ecdcd9d12d83b0f037b7e}{points}}, int point\+\_\+count=-\/1)
+\begin{DoxyCompactList}\small\item\em Construct a path from a set of points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_path_a13e46d8a8a98060bb07bf28910434b60}{Path}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Construct a path from a serial file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_path_af0ac6fa41445afb1337da35c49b688cd}{serialize}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Serialize the path to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_path_aa576714ae0ba4f03239e565c3dc7851a}{distance\+\_\+to\+\_\+end}} (\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}} point)
+\begin{DoxyCompactList}\small\item\em The distance from a point to the end of the path. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_path_a0f39523e5eef044cfde11ddc23508c27}{distance\+\_\+to\+\_\+end}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em The distance from a point to the end of the path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_path_a926e1e266ebab17718731928a97447a7}{construct\+\_\+path}} (std\+::vector$<$ double $>$ x, std\+::vector$<$ double $>$ y, int point\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Helper function that both constructors utilize to construct the path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}} $>$ \mbox{\hyperlink{class_path_a25647056de9ecdcd9d12d83b0f037b7e}{points}}
+\begin{DoxyCompactList}\small\item\em The points that define the path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_path_a143a783635fa23e091294271cabaa996}{Pursuit}}
+\item 
+class \mbox{\hyperlink{class_path_a584c10916c801d1369b79b919b1f347c}{Virtual\+Chassis}}
+\item 
+class \mbox{\hyperlink{class_path_a03781c43e9a1316e852389c6fe8e412f}{Chassis}}
+\item 
+int \mbox{\hyperlink{class_path_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_path_af26cfab021ddf49af73da3b2beca85ac}\index{Path@{Path}!Path@{Path}}
+\index{Path@{Path}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_path_af26cfab021ddf49af73da3b2beca85ac} 
+Path\+::\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for the {\ttfamily \doxylink{class_path}{Path}} class. Initializes the path with no points. 
+
+\Hypertarget{class_path_a7fba93e8ff0c968e51ea59d7a02960ae}\index{Path@{Path}!Path@{Path}}
+\index{Path@{Path}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_path_a7fba93e8ff0c968e51ea59d7a02960ae} 
+Path\+::\+Path (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x}{, }\item[{std\+::vector$<$ double $>$}]{y}{, }\item[{int}]{point\+\_\+count}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+
+
+Construct a path from a set of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinates of the points. \\
+\hline
+{\em y} & The y-\/coordinates of the points. \\
+\hline
+{\em point\+\_\+count} & The number of points to use. If {\ttfamily point\+\_\+count = -\/1} then {\ttfamily len(x) \texorpdfstring{$\ast$}{*} 10} points are used. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \`{}std\+::logic\+\_\+error\`{}} & if the number of x-\/coordinates and y-\/coordinates do not match. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_path_a068330da678be15ca1f899960382a1c9}\index{Path@{Path}!Path@{Path}}
+\index{Path@{Path}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_path_a068330da678be15ca1f899960382a1c9} 
+Path\+::\+Path (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$}]{points}{, }\item[{int}]{point\+\_\+count}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+
+
+Construct a path from a set of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & The points that define the path. \\
+\hline
+{\em point\+\_\+count} & The number of points to use. If {\ttfamily point\+\_\+count = -\/1} then {\ttfamily len(points) \texorpdfstring{$\ast$}{*} 10} points are used. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_path_a13e46d8a8a98060bb07bf28910434b60}\index{Path@{Path}!Path@{Path}}
+\index{Path@{Path}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_path_a13e46d8a8a98060bb07bf28910434b60} 
+Path\+::\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Construct a path from a serial file. 
+
+The file must have been serialized using the {\ttfamily serialize} method. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to read the path from. Must be a \textquotesingle{}.path\textquotesingle{} file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \`{}std\+::logic\+\_\+error\`{}} & if the file extension is invalid (not \textquotesingle{}.path\textquotesingle{}). \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_path_a926e1e266ebab17718731928a97447a7}\index{Path@{Path}!construct\_path@{construct\_path}}
+\index{construct\_path@{construct\_path}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{construct\_path()}{construct\_path()}}
+{\footnotesize\ttfamily \label{class_path_a926e1e266ebab17718731928a97447a7} 
+void Path\+::construct\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x}{, }\item[{std\+::vector$<$ double $>$}]{y}{, }\item[{int}]{point\+\_\+count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper function that both constructors utilize to construct the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinates of the points. \\
+\hline
+{\em y} & The y-\/coordinates of the points. \\
+\hline
+{\em point\+\_\+count} & The number of points to use. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_path_aa576714ae0ba4f03239e565c3dc7851a}\index{Path@{Path}!distance\_to\_end@{distance\_to\_end}}
+\index{distance\_to\_end@{distance\_to\_end}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{distance\_to\_end()}{distance\_to\_end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_path_aa576714ae0ba4f03239e565c3dc7851a} 
+double Path\+::distance\+\_\+to\+\_\+end (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The distance from a point to the end of the path. 
+
+This distance is calculated by summing the distances from the point to the closest waypoint with the distances between the waypoints to the end of the path (starting from the closest waypoint).
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to calculate the distance from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance from the point to the end of the path. 
+\end{DoxyReturn}
+\Hypertarget{class_path_a0f39523e5eef044cfde11ddc23508c27}\index{Path@{Path}!distance\_to\_end@{distance\_to\_end}}
+\index{distance\_to\_end@{distance\_to\_end}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{distance\_to\_end()}{distance\_to\_end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_path_a0f39523e5eef044cfde11ddc23508c27} 
+double Path\+::distance\+\_\+to\+\_\+end (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The distance from a point to the end of the path. 
+
+This distance is calculated by summing the distances from the point to the closest waypoint with the distances between the waypoints to the end of the path (starting from the closest waypoint).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the point. \\
+\hline
+{\em y} & The y-\/coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance from the point to the end of the path. 
+\end{DoxyReturn}
+\Hypertarget{class_path_a7154757b1c75b64b39527edc5b74ba43}\index{Path@{Path}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{class_path_a7154757b1c75b64b39527edc5b74ba43} 
+\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}} Path\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Get the point at the given index. 
+
+\begin{DoxyReturn}{Returns}
+The point at the given index. 
+\end{DoxyReturn}
+\Hypertarget{class_path_af0ac6fa41445afb1337da35c49b688cd}\index{Path@{Path}!serialize@{serialize}}
+\index{serialize@{serialize}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_path_af0ac6fa41445afb1337da35c49b688cd} 
+void Path\+::serialize (\begin{DoxyParamCaption}\item[{std\+::string}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Serialize the path to a file. 
+
+The file will be saved in a binary format. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to save the path to. Must be a \textquotesingle{}.path\textquotesingle{} file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \`{}std\+::logic\+\_\+error\`{}} & if the file extension is invalid (not \textquotesingle{}.path\textquotesingle{}). \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_path_a03781c43e9a1316e852389c6fe8e412f}\index{Path@{Path}!Chassis@{Chassis}}
+\index{Chassis@{Chassis}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{Chassis}{Chassis}}
+{\footnotesize\ttfamily \label{class_path_a03781c43e9a1316e852389c6fe8e412f} 
+friend class \mbox{\hyperlink{class_chassis}{Chassis}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{class_path_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{Path@{Path}!main@{main}}
+\index{main@{main}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{main}{main}}
+{\footnotesize\ttfamily \label{class_path_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{class_path_a143a783635fa23e091294271cabaa996}\index{Path@{Path}!Pursuit@{Pursuit}}
+\index{Pursuit@{Pursuit}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{Pursuit}{Pursuit}}
+{\footnotesize\ttfamily \label{class_path_a143a783635fa23e091294271cabaa996} 
+friend class \mbox{\hyperlink{class_pursuit}{Pursuit}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{class_path_a584c10916c801d1369b79b919b1f347c}\index{Path@{Path}!VirtualChassis@{VirtualChassis}}
+\index{VirtualChassis@{VirtualChassis}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{VirtualChassis}{VirtualChassis}}
+{\footnotesize\ttfamily \label{class_path_a584c10916c801d1369b79b919b1f347c} 
+friend class \mbox{\hyperlink{class_virtual_chassis}{Virtual\+Chassis}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_path_a25647056de9ecdcd9d12d83b0f037b7e}\index{Path@{Path}!points@{points}}
+\index{points@{points}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \label{class_path_a25647056de9ecdcd9d12d83b0f037b7e} 
+std\+::vector$<$\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}$>$ Path\+::points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The points that define the path. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+pathing/\mbox{\hyperlink{path_8hpp}{path.\+hpp}}\end{DoxyCompactItemize}

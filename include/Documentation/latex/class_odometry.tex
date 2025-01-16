@@ -1,0 +1,313 @@
+\doxysection{Odometry Class Reference}
+\hypertarget{class_odometry}{}\label{class_odometry}\index{Odometry@{Odometry}}
+
+
+The {\ttfamily \doxylink{class_odometry}{Odometry}} class tracks the position and rotation of the robot.  
+
+
+
+
+{\ttfamily \#include $<$odometry.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_odometry_a3f795bd58f673cc1f20a9112743f080c}{Odometry}} (vex\+::rotation \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_odometry_adf92685c8d85051696259c3dbf30694a}{front\+\_\+back\+\_\+encoder}}, vex\+::rotation \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_odometry_a8b24dc1d43968d6abd993486fd56cdc2}{left\+\_\+right\+\_\+encoder}}, vex\+::inertial \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_odometry_a4102da70112e99096878ea2970111535}{inertial\+\_\+sensor}}, double \mbox{\hyperlink{class_odometry_aaac9bd48b59b688218a7802d32301c1c}{base\+\_\+width}}, double \mbox{\hyperlink{class_odometry_a6086fc3241eab06fe9b8822a8afea1ca}{wheel\+\_\+radius}}, int \mbox{\hyperlink{class_odometry_af54393047a21306a77e030c5114ac7e7}{thread\+\_\+sleep}})
+\begin{DoxyCompactList}\small\item\em Constructor for the odometry class. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}{x}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the x coordinate, in units consistent with the rest of the program. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}{y}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the y coordinate, in units consistent with the rest of the program. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}{rotation}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the rotation, in radians. This value is unbounded (not capped to \mbox{[}0, 2π\mbox{]}), and may be negative. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_odometry_aeb38760053310d809afe72f6bb973350}{set\+\_\+pose}} (double \mbox{\hyperlink{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}{x}}, double \mbox{\hyperlink{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}{y}}, double \mbox{\hyperlink{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}{rotation}})
+\begin{DoxyCompactList}\small\item\em Set the pose of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vex\+::thread \mbox{\hyperlink{class_odometry_a03cab013e84717fd10e1f4af40aa5fcb}{tracking}}
+\begin{DoxyCompactList}\small\item\em Thread to update the odometry object\textquotesingle{}s position and rotation. \end{DoxyCompactList}\item 
+vex\+::thread \mbox{\hyperlink{class_odometry_ae0795081bd2bc7430e4c74f21a0a6157}{displaying}}
+\begin{DoxyCompactList}\small\item\em Display thread for the odometry object-\/ initialized automatically. \end{DoxyCompactList}\item 
+vex\+::rotation \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_odometry_adf92685c8d85051696259c3dbf30694a}{front\+\_\+back\+\_\+encoder}}
+\begin{DoxyCompactList}\small\item\em The front-\/back encoder, which measures motion in the direction parallel to the robot\textquotesingle{}s velocity. Ensure that this encoder is tracking the LEFT side of the robot, otherwise the \doxylink{class_odometry}{Odometry} logic will fail. \end{DoxyCompactList}\item 
+vex\+::rotation \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_odometry_a8b24dc1d43968d6abd993486fd56cdc2}{left\+\_\+right\+\_\+encoder}}
+\begin{DoxyCompactList}\small\item\em The left-\/right encoder, which measures motion in the direction perpendicular to the robot\textquotesingle{}s velocity. This encoder can track a wheel that is attached anywhere in the two degrees of freedom. \end{DoxyCompactList}\item 
+vex\+::inertial \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_odometry_a4102da70112e99096878ea2970111535}{inertial\+\_\+sensor}}
+\begin{DoxyCompactList}\small\item\em The inertial sensor. Ensure that the sensor is mounted in the correct orientation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_aaac9bd48b59b688218a7802d32301c1c}{base\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em The base width of the robot. This is the distance between the left and right group. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a6086fc3241eab06fe9b8822a8afea1ca}{wheel\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em The radius of the wheel. This is the distance from the center of the wheel to the edge. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a81c0b7d07a9fe73367cc1f3f7f6d48a1}{x\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The x position of the robot. This is the horizontal position of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a152cdf0625df734e307d9d206371f29d}{y\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The y position of the robot. This is the vertical position of the robot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a897d4644460001a93359621ca426bbd0}{rotation\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em The rotation of the robot, in radians. This is the orientation of the robot, and is unbounded. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_odometry_af54393047a21306a77e030c5114ac7e7}{thread\+\_\+sleep}}
+\begin{DoxyCompactList}\small\item\em The time in milliseconds to sleep between iterations. This is used to prevent resource exhaustion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_odometry_a019a64c208f467a62d6beb174eba0e1b}{track}} (void \texorpdfstring{$\ast$}{*}o)
+\begin{DoxyCompactList}\small\item\em The tracking function to update the position and rotation of the robot. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_odometry_a9fe9780b2dd6b1dd96ad0e95f26bfb21}{display}} (void \texorpdfstring{$\ast$}{*}o)
+\begin{DoxyCompactList}\small\item\em Display function for odometry. Displays the position and rotation of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The {\ttfamily \doxylink{class_odometry}{Odometry}} class tracks the position and rotation of the robot. 
+
+\begin{DoxyAttention}{Attention}
+The {\ttfamily \doxylink{class_odometry}{Odometry}} class will only function within scope, so make sure it is managed by another object. By default, {\ttfamily \doxylink{class_chassis}{Chassis}} instances (and all instances of derived classes) manages the {\ttfamily \doxylink{class_odometry}{Odometry}} object. 
+\end{DoxyAttention}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_odometry_a3f795bd58f673cc1f20a9112743f080c}\index{Odometry@{Odometry}!Odometry@{Odometry}}
+\index{Odometry@{Odometry}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{Odometry()}{Odometry()}}
+{\footnotesize\ttfamily \label{class_odometry_a3f795bd58f673cc1f20a9112743f080c} 
+Odometry\+::\+Odometry (\begin{DoxyParamCaption}\item[{vex\+::rotation \texorpdfstring{$\ast$}{*}}]{front\+\_\+back\+\_\+encoder}{, }\item[{vex\+::rotation \texorpdfstring{$\ast$}{*}}]{left\+\_\+right\+\_\+encoder}{, }\item[{vex\+::inertial \texorpdfstring{$\ast$}{*}}]{inertial\+\_\+sensor}{, }\item[{double}]{base\+\_\+width}{, }\item[{double}]{wheel\+\_\+radius}{, }\item[{int}]{thread\+\_\+sleep}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the odometry class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em front\+\_\+back\+\_\+encoder} & The front-\/back encoder, which measures motion in the direction parallel to the robot\textquotesingle{}s velocity. Ensure that this encoder is tracking the LEFT side of the robot, otherwise the \doxylink{class_odometry}{Odometry} logic will fail. \\
+\hline
+{\em left\+\_\+right\+\_\+encoder} & The left-\/right encoder, which measures motion in the direction perpendicular to the robot\textquotesingle{}s velocity. This encoder can track a wheel that is attached anywhere in the two degrees of freedom. \\
+\hline
+{\em inertial\+\_\+sensor} & The inertial sensor. Ensure that the sensor is mounted in the correct orientation. \\
+\hline
+{\em base\+\_\+width} & The width of the base. This is the distance between the left and right group. \\
+\hline
+{\em wheel\+\_\+radius} & The radius of the wheel. This is the distance from the center of the wheel to the edge. \\
+\hline
+{\em thread\+\_\+sleep} & The time in milliseconds to sleep between iterations. This is used to prevent resource exhaustion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Ensure that the measurements are in consistent units across the entire program, or the robot may not behave as expected. 
+\end{DoxyAttention}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}\index{Odometry@{Odometry}!rotation@{rotation}}
+\index{rotation@{rotation}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily \label{class_odometry_a19e41f86d55e90de7bd1200e66018bf4} 
+double Odometry\+::rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the rotation, in radians. This value is unbounded (not capped to \mbox{[}0, 2π\mbox{]}), and may be negative. 
+
+\Hypertarget{class_odometry_aeb38760053310d809afe72f6bb973350}\index{Odometry@{Odometry}!set\_pose@{set\_pose}}
+\index{set\_pose@{set\_pose}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{set\_pose()}{set\_pose()}}
+{\footnotesize\ttfamily \label{class_odometry_aeb38760053310d809afe72f6bb973350} 
+void Odometry\+::set\+\_\+pose (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{, }\item[{double}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Set the pose of the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x position, in units consistent with the rest of the program. \\
+\hline
+{\em y} & The y position, in units consistent with the rest of the program. \\
+\hline
+{\em rotation} & The rotation, in radians. This value may be any real number, not necessarily in the range \mbox{[}0, 2π)-\/ though it is recommended to keep the value within this range for simplicity and practicality. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+It is not recommended to call this function during autonomous operation unless the programmer is certain of the robot\textquotesingle{}s position and that the robot will not move during the call. Failure to do so may result in unexpected behavior or tracking that is not consistent with the robot\textquotesingle{}s actual position. 
+\end{DoxyAttention}
+\Hypertarget{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}\index{Odometry@{Odometry}!x@{x}}
+\index{x@{x}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily \label{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3} 
+double Odometry\+::x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the x coordinate, in units consistent with the rest of the program. 
+
+\Hypertarget{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}\index{Odometry@{Odometry}!y@{y}}
+\index{y@{y}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily \label{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a} 
+double Odometry\+::y (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the y coordinate, in units consistent with the rest of the program. 
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_odometry_a9fe9780b2dd6b1dd96ad0e95f26bfb21}\index{Odometry@{Odometry}!display@{display}}
+\index{display@{display}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily \label{class_odometry_a9fe9780b2dd6b1dd96ad0e95f26bfb21} 
+int display (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Display function for odometry. Displays the position and rotation of the robot. 
+
+This function is used by the display thread, which is initialized by the odometry object constructor. \begin{DoxyAttention}{Attention}
+This function is NOT meant to be called directly. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The odometry object as a void\texorpdfstring{$\ast$}{*}. Immediately cast back to an Virtual\+Odometry\texorpdfstring{$\ast$}{*}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_odometry_a019a64c208f467a62d6beb174eba0e1b}\index{Odometry@{Odometry}!track@{track}}
+\index{track@{track}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{track}{track}}
+{\footnotesize\ttfamily \label{class_odometry_a019a64c208f467a62d6beb174eba0e1b} 
+int track (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The tracking function to update the position and rotation of the robot. 
+
+This function is used by the tracking thread, which is initialized by the odometry object constructor. \begin{DoxyAttention}{Attention}
+This function is NOT meant to be called directly. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The odometry object to track as a void pointer. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_odometry_aaac9bd48b59b688218a7802d32301c1c}\index{Odometry@{Odometry}!base\_width@{base\_width}}
+\index{base\_width@{base\_width}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{base\_width}{base\_width}}
+{\footnotesize\ttfamily \label{class_odometry_aaac9bd48b59b688218a7802d32301c1c} 
+double Odometry\+::base\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The base width of the robot. This is the distance between the left and right group. 
+
+\Hypertarget{class_odometry_ae0795081bd2bc7430e4c74f21a0a6157}\index{Odometry@{Odometry}!displaying@{displaying}}
+\index{displaying@{displaying}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{displaying}{displaying}}
+{\footnotesize\ttfamily \label{class_odometry_ae0795081bd2bc7430e4c74f21a0a6157} 
+vex\+::thread Odometry\+::displaying\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Display thread for the odometry object-\/ initialized automatically. 
+
+\begin{DoxyAttention}{Attention}
+This thread is managed by the \doxylink{class_odometry}{Odometry} object. It does NOT detach; therefore, the \doxylink{class_odometry}{Odometry} object must remain in scope throughout the desired period of coordinate tracking, either through management by another object or through the use of a blocking function. By default, the \doxylink{class_odometry}{Odometry} object is managed by the \doxylink{class_chassis}{Chassis} object (and all derived classes). 
+\end{DoxyAttention}
+\Hypertarget{class_odometry_adf92685c8d85051696259c3dbf30694a}\index{Odometry@{Odometry}!front\_back\_encoder@{front\_back\_encoder}}
+\index{front\_back\_encoder@{front\_back\_encoder}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{front\_back\_encoder}{front\_back\_encoder}}
+{\footnotesize\ttfamily \label{class_odometry_adf92685c8d85051696259c3dbf30694a} 
+vex\+::rotation\texorpdfstring{$\ast$}{*} Odometry\+::front\+\_\+back\+\_\+encoder\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The front-\/back encoder, which measures motion in the direction parallel to the robot\textquotesingle{}s velocity. Ensure that this encoder is tracking the LEFT side of the robot, otherwise the \doxylink{class_odometry}{Odometry} logic will fail. 
+
+\Hypertarget{class_odometry_a4102da70112e99096878ea2970111535}\index{Odometry@{Odometry}!inertial\_sensor@{inertial\_sensor}}
+\index{inertial\_sensor@{inertial\_sensor}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{inertial\_sensor}{inertial\_sensor}}
+{\footnotesize\ttfamily \label{class_odometry_a4102da70112e99096878ea2970111535} 
+vex\+::inertial\texorpdfstring{$\ast$}{*} Odometry\+::inertial\+\_\+sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The inertial sensor. Ensure that the sensor is mounted in the correct orientation. 
+
+\Hypertarget{class_odometry_a8b24dc1d43968d6abd993486fd56cdc2}\index{Odometry@{Odometry}!left\_right\_encoder@{left\_right\_encoder}}
+\index{left\_right\_encoder@{left\_right\_encoder}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{left\_right\_encoder}{left\_right\_encoder}}
+{\footnotesize\ttfamily \label{class_odometry_a8b24dc1d43968d6abd993486fd56cdc2} 
+vex\+::rotation\texorpdfstring{$\ast$}{*} Odometry\+::left\+\_\+right\+\_\+encoder\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left-\/right encoder, which measures motion in the direction perpendicular to the robot\textquotesingle{}s velocity. This encoder can track a wheel that is attached anywhere in the two degrees of freedom. 
+
+\Hypertarget{class_odometry_a897d4644460001a93359621ca426bbd0}\index{Odometry@{Odometry}!rotation\_value@{rotation\_value}}
+\index{rotation\_value@{rotation\_value}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{rotation\_value}{rotation\_value}}
+{\footnotesize\ttfamily \label{class_odometry_a897d4644460001a93359621ca426bbd0} 
+double Odometry\+::rotation\+\_\+value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The rotation of the robot, in radians. This is the orientation of the robot, and is unbounded. 
+
+\Hypertarget{class_odometry_af54393047a21306a77e030c5114ac7e7}\index{Odometry@{Odometry}!thread\_sleep@{thread\_sleep}}
+\index{thread\_sleep@{thread\_sleep}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{thread\_sleep}{thread\_sleep}}
+{\footnotesize\ttfamily \label{class_odometry_af54393047a21306a77e030c5114ac7e7} 
+int Odometry\+::thread\+\_\+sleep\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The time in milliseconds to sleep between iterations. This is used to prevent resource exhaustion. 
+
+If the thread sleep is too low, the CPU will be overworked with all resources dedicated to the tracking function, which will cause the program to freeze; other threads will not be able to run. If the thread sleep value is too high, the tracking function will experience a high degree of granularity, which may cause tracking inaccuracies. By default, it is set to 10 milliseconds, which is a good balance between high granularity and resource efficiency. \Hypertarget{class_odometry_a03cab013e84717fd10e1f4af40aa5fcb}\index{Odometry@{Odometry}!tracking@{tracking}}
+\index{tracking@{tracking}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{tracking}{tracking}}
+{\footnotesize\ttfamily \label{class_odometry_a03cab013e84717fd10e1f4af40aa5fcb} 
+vex\+::thread Odometry\+::tracking\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thread to update the odometry object\textquotesingle{}s position and rotation. 
+
+\begin{DoxyAttention}{Attention}
+This thread is managed by the \doxylink{class_odometry}{Odometry} object. It does NOT detach; therefore, the \doxylink{class_odometry}{Odometry} object must remain in scope throughout the desired period of coordinate tracking, either through management by another object or through the use of a blocking function. By default, the \doxylink{class_odometry}{Odometry} object is managed by the \doxylink{class_chassis}{Chassis} object (and all derived classes). 
+\end{DoxyAttention}
+\Hypertarget{class_odometry_a6086fc3241eab06fe9b8822a8afea1ca}\index{Odometry@{Odometry}!wheel\_radius@{wheel\_radius}}
+\index{wheel\_radius@{wheel\_radius}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{wheel\_radius}{wheel\_radius}}
+{\footnotesize\ttfamily \label{class_odometry_a6086fc3241eab06fe9b8822a8afea1ca} 
+double Odometry\+::wheel\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The radius of the wheel. This is the distance from the center of the wheel to the edge. 
+
+\Hypertarget{class_odometry_a81c0b7d07a9fe73367cc1f3f7f6d48a1}\index{Odometry@{Odometry}!x\_position@{x\_position}}
+\index{x\_position@{x\_position}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{x\_position}{x\_position}}
+{\footnotesize\ttfamily \label{class_odometry_a81c0b7d07a9fe73367cc1f3f7f6d48a1} 
+double Odometry\+::x\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The x position of the robot. This is the horizontal position of the robot. 
+
+\Hypertarget{class_odometry_a152cdf0625df734e307d9d206371f29d}\index{Odometry@{Odometry}!y\_position@{y\_position}}
+\index{y\_position@{y\_position}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{y\_position}{y\_position}}
+{\footnotesize\ttfamily \label{class_odometry_a152cdf0625df734e307d9d206371f29d} 
+double Odometry\+::y\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The y position of the robot. This is the vertical position of the robot. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+autonomous/\mbox{\hyperlink{odometry_8hpp}{odometry.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\doxysection{pid.\+hpp}
+\hypertarget{pid_8hpp_source}{}\label{pid_8hpp_source}\index{autonomous/pid.hpp@{autonomous/pid.hpp}}
+\mbox{\hyperlink{pid_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VEXLIBRARY\_PID\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VEXLIBRARY\_PID\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_i_d_afdd445e54a0a3753ceb5f50382295d16}{PID}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a1d61c12e44fa9917dfc5c104493f5f29}{kp}},\ \mbox{\hyperlink{class_p_i_d_a750722249a34a914f6e2f05cd9d4dee3}{ki}},\ \mbox{\hyperlink{class_p_i_d_a0094a774f6f64b4a1a9f93fd877c5df4}{kd}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_ae82cd4c11ce01219eca92f0b5b45cee5}{target}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a7792de52992d0c0362f12df93a7abb28}{integral}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a501e79143e63873f3fe91915e640826f}{last\_error}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_ab1f9f946b91555c570e9484c8a83b6f2}{minimum\_output}},\ \mbox{\hyperlink{class_p_i_d_a5391b3660524f6de46bef7bca1c0f8cd}{maximum\_output}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a0702085f2de98342ad60159e0c685f7f}{gamma}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_p_i_d_afdd445e54a0a3753ceb5f50382295d16}{PID}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a1d61c12e44fa9917dfc5c104493f5f29}{kp}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a750722249a34a914f6e2f05cd9d4dee3}{ki}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a0094a774f6f64b4a1a9f93fd877c5df4}{kd}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_ab1f9f946b91555c570e9484c8a83b6f2}{minimum\_output}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a5391b3660524f6de46bef7bca1c0f8cd}{maximum\_output}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_a0702085f2de98342ad60159e0c685f7f}{gamma}}\ =\ 0.9999);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_a2e301ab123c9e18e677b4873b03550dd}{set\_target}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_ae82cd4c11ce01219eca92f0b5b45cee5}{target}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_i_d_af3a14c4db30a13386413e8690df29236}{calculate}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_af9677e76cb1beffbcf3f54cbc627c530}{reset}}();}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ VEXLIBRARY\_PID\_HPP}}
+
+\end{DoxyCode}

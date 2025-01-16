@@ -1,0 +1,127 @@
+\doxysection{motor.\+hpp}
+\hypertarget{motor_8hpp_source}{}\label{motor_8hpp_source}\index{autonomous/motor.hpp@{autonomous/motor.hpp}}
+\mbox{\hyperlink{motor_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VEXLIBRARY\_MOTOR\_GROUP\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VEXLIBRARY\_MOTOR\_GROUP\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{vex_8h}{vex.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_motor_group_abb8e3e077cdc061d321162f846647aeb}{MotorGroup}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_ab66d91d2f85defc1e9c1875fb5b8945b}{add\_motor}}(vex::motor*\ m)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_aa3740420fe023b1c31cba6a7338bdd5b}{motors}}.push\_back(m);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a5d4a011f7b51dd6603620ea505750e36}{add\_motor}}(vex::motor*\ m1,\ Args\ ...\ m)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_aa3740420fe023b1c31cba6a7338bdd5b}{motors}}.push\_back(m1);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_ab66d91d2f85defc1e9c1875fb5b8945b}{add\_motor}}(m...);}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<vex::motor*>\ \mbox{\hyperlink{class_motor_group_aa3740420fe023b1c31cba6a7338bdd5b}{motors}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_motor_group_abb8e3e077cdc061d321162f846647aeb}{MotorGroup}}():\ \mbox{\hyperlink{class_motor_group_aa3740420fe023b1c31cba6a7338bdd5b}{motors}}()\ \{\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_motor_group_a5cfd551cbea7501e2749320bd142f6a2}{MotorGroup}}(vex::motor*\ m1,\ Args\ ...\ m):\ \mbox{\hyperlink{class_motor_group_abb8e3e077cdc061d321162f846647aeb}{MotorGroup}}()\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_ab66d91d2f85defc1e9c1875fb5b8945b}{add\_motor}}(m1,\ m...);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_motor_group_aed6cbd24d4696f16ad454314018ee30c}{count}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a9282b4f75ed9d3340878ccfe58a469d0}{setVelocity}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_ab8e2d15b4067aa0054c3c20b825fec95}{setVelocity}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::percentUnits\ units);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_ab8515b4e2ad36fe1dfcb492a757c4c8c}{setStopping}}(vex::brakeType\ mode);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a6185560fa7aae28aa233ffd12cb73cd3}{resetPosition}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a8709fe0b091c5f8329226ec92754c10b}{setPosition}}(\textcolor{keywordtype}{double}\ value,\ vex::rotationUnits\ units);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a2ca37b5b9e13f3a06062ee6337f7d93c}{setTimeout}}(int32\_t\ time,\ vex::timeUnits\ units);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a38111e3e9462437f2264ab3f9a52323b}{spin}}(vex::directionType\ dir);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a7586f62d90e003622ece98d437791d4f}{spin}}(vex::directionType\ dir,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a9ada7817ae30cf0d4e675413daaf1549}{spin}}(vex::directionType\ dir,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::percentUnits\ units);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a83ea7941d4b0fdd3a8e6114683612597}{spin}}(vex::directionType\ dir,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a1ed6e34c891bfeec7a4b697305d59b1c}{voltage}},\ vex::voltageUnits\ units);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00143\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_ad3eba45c7046845f43590d6786c92a89}{spinTo}}(\textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units\_v,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00154\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_a3fcd765b317b49ebc06d5228d7d5b11b}{spinToPosition}}(\textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units\_v,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00155\ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_ac84587f0410099b254d40014b86c1d9a}{spinTo}}(\textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00172\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_a9b25d8cffb0ba7d8f54b2618adc48773}{spinToPosition}}(\textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00173\ \ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_aa9f7a91bebcaf8e2b17807b23bbefdd2}{spinFor}}(\textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units\_v,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00184\ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_a1b4988c2f1e2fff8e03c5df39fab83b5}{spinFor}}(vex::directionType\ dir,\ \textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units\_v,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00196\ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_a668647ffeb322f34efd035e55d2fac91}{spinFor}}(\textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00205\ \ \ \ \ }
+\DoxyCodeLine{00214\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_a131a9e04d8c8e839c635f0fabd9ee5d3}{spinFor}}(vex::directionType\ dir,\ \textcolor{keywordtype}{double}\ rotation,\ vex::rotationUnits\ units,\ \textcolor{keywordtype}{bool}\ waitForCompletion\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00215\ \ \ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_aef5962abd95ce8418d357a37a3f171c0}{spinFor}}(\textcolor{keywordtype}{double}\ time,\ vex::timeUnits\ units,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units\_v);}
+\DoxyCodeLine{00224\ \ \ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_aa5c227baa1ab6528a534970d07f37430}{spinFor}}(vex::directionType\ dir,\ \textcolor{keywordtype}{double}\ time,\ vex::timeUnits\ units,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units\_v);}
+\DoxyCodeLine{00234\ \ \ \ \ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a35ad4652ca0ede70df4e78c4fd07daab}{spinFor}}(\textcolor{keywordtype}{double}\ time,\ vex::timeUnits\ units);}
+\DoxyCodeLine{00241\ \ \ \ \ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a1468f02b928510a3f4c9588f75422db7}{spinFor}}(vex::directionType\ dir,\ \textcolor{keywordtype}{double}\ time,\ vex::timeUnits\ units);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00254\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_ae5397b8eb08e2ed6acdbde38265bde3e}{isSpinning}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00255\ \ \ \ \ }
+\DoxyCodeLine{00260\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_a0f6b93fbd9b98b52792a423923f321eb}{isDone}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00266\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{class_motor_group_a271a03bb7a45af111fe2aed7cf94e21e}{isSpinningMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_ae896567e60bab7cd9b0008a5434a4b7d}{stop}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a290ca607ebe2ce4c22dcb11fc99b9bda}{stop}}(vex::brakeType\ mode);}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a1a40788821c12897cf5393465bbd6f5e}{setMaxTorque}}(\textcolor{keywordtype}{double}\ value,\ vex::percentUnits\ units);}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a903d9424fe8eb0c468aa34867b855f0e}{setMaxTorque}}(\textcolor{keywordtype}{double}\ value,\ vex::torqueUnits\ units);}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_af222d2f0173af560188971f499914a4a}{setMaxTorque}}(\textcolor{keywordtype}{double}\ value,\ vex::currentUnits\ units);}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00304\ \ \ \ \ std::vector<vex::directionType>\ \mbox{\hyperlink{class_motor_group_a778e7a58e2509955b9b0e3cb11fef1fc}{direction}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00311\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a221b78149c45892612cca35d896a559b}{position}}(vex::rotationUnits\ units);}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00318\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}}(vex::velocityUnits\ units);}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00325\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a4064614cc6796c86851b20a09ccc83a8}{velocity}}(vex::percentUnits\ units);}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00332\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a996ab8f9c5861fe56bfd98ece3fca62c}{current}}(vex::currentUnits\ units\ =\ vex::currentUnits::amp);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00339\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a3c283807b33587b8edf08b70fdd9abbb}{current}}(vex::percentUnits\ units);}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00346\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a1ed6e34c891bfeec7a4b697305d59b1c}{voltage}}(vex::voltageUnits\ units\ =\ vex::voltageUnits::volt);}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00353\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_acb5a691efd788cc52a11da86829bb81b}{power}}(vex::powerUnits\ units\ =\ vex::powerUnits::watt);}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00360\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_aa8c6a11845c3946c836a898b22e1965e}{torque}}(vex::torqueUnits\ units\ =\ vex::torqueUnits::Nm);}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00367\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a7a1a2915fc3dc4fd286adfeb7d29d096}{efficiency}}(vex::percentUnits\ units\ =\ vex::percentUnits::pct);}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00374\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a90af1eee8e483db85b80f0caab5cd156}{temperature}}(vex::percentUnits\ units\ =\ vex::percentUnits::pct);}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00381\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a8e51f52bc90301a4cbdecb8475bde3c5}{temperature}}(vex::temperatureUnits\ units);}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00390\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_motor_group_a3822b7f9600481bdce5f6bbd87c06f59}{convertVelocity}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a56be45428e2cc586c853bb3caa6ae76e}{velocity}},\ vex::velocityUnits\ units,\ vex::velocityUnits\ unitsout\ =\ vex::velocityUnits::rpm);}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00396\ \ \ \ \ std::vector<vex::gearSetting>\ \mbox{\hyperlink{class_motor_group_abe29bc8c55fefad787a3519ab92235b5}{getMotorCartridge}}();}
+\DoxyCodeLine{00397\ \ \ \ \ }
+\DoxyCodeLine{00398\ \};}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ VEXLIBRARY\_MOTOR\_GROUP\_HPP}}
+
+\end{DoxyCode}

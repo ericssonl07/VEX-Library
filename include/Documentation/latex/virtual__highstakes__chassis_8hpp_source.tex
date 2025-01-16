@@ -1,0 +1,53 @@
+\doxysection{virtual\+\_\+highstakes\+\_\+chassis.\+hpp}
+\hypertarget{virtual__highstakes__chassis_8hpp_source}{}\label{virtual__highstakes__chassis_8hpp_source}\mbox{\hyperlink{virtual__highstakes__chassis_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VEXLIBRARY\_VIRTUAL\_HIGHSTAKES\_CHASSIS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VEXLIBRARY\_VIRTUAL\_HIGHSTAKES\_CHASSIS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{virtual__chassis_8hpp}{virtual\_chassis.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_virtual_high_stakes_chassis_a54f408ee7aa9aa9a3f7b4489d61b2396}{VirtualHighStakesChassis}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_virtual_chassis_a25b332d971873c716d695f1c89030c36}{VirtualChassis}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ vex::motor\ *\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06}{intake\_motor}};}
+\DoxyCodeLine{00009\ \ \ \ \ vex::optical\ *\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\_sensor}};}
+\DoxyCodeLine{00010\ \ \ \ \ vex::color\ *\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a7e329035192952232e403cce37faa050}{autonomous\_side}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a3df913d881375948b813ae0e8e1dd8cf}{intake\_for\_msec\_impl}};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae858b3303f05a5d15bdff27f1c81ee05}{intake\_power\_impl}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ade70c1dd1a2ac9ada3a6635d4bd97ed7}{intake\_impl}}(\textcolor{keywordtype}{void}\ *\ obj)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a54f408ee7aa9aa9a3f7b4489d61b2396}{VirtualHighStakesChassis}}*\ instance\ =\ (\mbox{\hyperlink{class_virtual_high_stakes_chassis_a54f408ee7aa9aa9a3f7b4489d61b2396}{VirtualHighStakesChassis}}*)\ obj;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ function\_start\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ elapsed\_ms\ =\ std::chrono::duration\_cast<std::chrono::milliseconds>(std::chrono::high\_resolution\_clock::now()\ -\/\ function\_start).count();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (elapsed\_ms\ <\ instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a3df913d881375948b813ae0e8e1dd8cf}{intake\_for\_msec\_impl}})\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Elapsed:\ \%d\(\backslash\)n"{}},\ elapsed\_ms);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06}{intake\_motor}}\ -\/>\ spin(vex::fwd,\ instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae858b3303f05a5d15bdff27f1c81ee05}{intake\_power\_impl}},\ vex::pct);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\_sensor}}\ -\/>\ isNearObject())\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\_sensor}}\ -\/>\ color()\ ==\ *(instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a7e329035192952232e403cce37faa050}{autonomous\_side}}))\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Braking\(\backslash\)n"{}});}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06}{intake\_motor}}\ -\/>\ stop(vex::brakeType::brake);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vex::this\_thread::sleep\_for(100);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ elapsed\_ms\ =\ std::chrono::duration\_cast<std::chrono::milliseconds>(std::chrono::high\_resolution\_clock::now()\ -\/\ function\_start).count();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ vex::this\_thread::sleep\_for(1);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ instance\ -\/>\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06}{intake\_motor}}\ -\/>\ stop(vex::brakeType::brake);}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a54f408ee7aa9aa9a3f7b4489d61b2396}{VirtualHighStakesChassis}}(\mbox{\hyperlink{class_motor_group}{MotorGroup}}\ *\ \mbox{\hyperlink{class_virtual_chassis_a82ec793347a2bbb74865283989e79bdd}{left}},\ \mbox{\hyperlink{class_motor_group}{MotorGroup}}\ *\ \mbox{\hyperlink{class_virtual_chassis_a16f2da9d052702bbf7169a4d6f03ed2e}{right}},\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vex::motor\ *\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a25da2d792e98069badd527916adbcfa5}{intake}},\ vex::optical\ *\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\_sensor}},\ vex::color\ *\ team\_color,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_virtual_chassis_acd60fd1dbd353103e7b49e01a26cbcb1}{base\_width}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_virtual_chassis_a5c73874de470e09395ce5dd72f6806a8}{wheel\_radius}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_virtual_chassis_afdb2a57a7f45c2dce5eb00a7caa9b099}{pursuit\_distance}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_virtual_chassis_a27d3f2847a7e6b538d1df541840e5f7d}{gear\_multiplier}},\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ initial\_x,\ \textcolor{keywordtype}{double}\ initial\_y,\ \textcolor{keywordtype}{double}\ initial\_rotation,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_virtual_chassis_a38d6c3f5478adb5c71031c1e020c741b}{thread\_sleep}}):\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_virtual_chassis_a25b332d971873c716d695f1c89030c36}{VirtualChassis}}(\mbox{\hyperlink{class_virtual_chassis_a82ec793347a2bbb74865283989e79bdd}{left}},\ \mbox{\hyperlink{class_virtual_chassis_a16f2da9d052702bbf7169a4d6f03ed2e}{right}},\ \mbox{\hyperlink{class_virtual_chassis_acd60fd1dbd353103e7b49e01a26cbcb1}{base\_width}},\ \mbox{\hyperlink{class_virtual_chassis_a5c73874de470e09395ce5dd72f6806a8}{wheel\_radius}},\ \mbox{\hyperlink{class_virtual_chassis_afdb2a57a7f45c2dce5eb00a7caa9b099}{pursuit\_distance}},\ \mbox{\hyperlink{class_virtual_chassis_a27d3f2847a7e6b538d1df541840e5f7d}{gear\_multiplier}},\ initial\_x,\ initial\_y,\ initial\_rotation,\ \mbox{\hyperlink{class_virtual_chassis_a38d6c3f5478adb5c71031c1e020c741b}{thread\_sleep}}),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae1dade3b999a23f7a74dda2cfce67c06}{intake\_motor}}(\mbox{\hyperlink{class_virtual_high_stakes_chassis_a25da2d792e98069badd527916adbcfa5}{intake}}),\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\_sensor}}(\mbox{\hyperlink{class_virtual_high_stakes_chassis_a2359364605c244486fd8755fbb6d0246}{color\_sensor}}),\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a7e329035192952232e403cce37faa050}{autonomous\_side}}(team\_color)\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a25da2d792e98069badd527916adbcfa5}{intake}}(\textcolor{keywordtype}{int}\ for\_msec,\ \textcolor{keywordtype}{double}\ power)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_virtual_high_stakes_chassis_a3df913d881375948b813ae0e8e1dd8cf}{intake\_for\_msec\_impl}}\ =\ for\_msec;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_virtual_high_stakes_chassis_ae858b3303f05a5d15bdff27f1c81ee05}{intake\_power\_impl}}\ =\ power;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ vex::thread\ intake\_thread(\mbox{\hyperlink{class_virtual_high_stakes_chassis_ade70c1dd1a2ac9ada3a6635d4bd97ed7}{intake\_impl}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ VEXLIBRARY\_VIRTUAL\_HIGHSTAKES\_CHASSIS\_HPP}}
+
+\end{DoxyCode}

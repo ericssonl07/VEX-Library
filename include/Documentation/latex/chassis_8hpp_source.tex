@@ -1,0 +1,64 @@
+\doxysection{chassis.\+hpp}
+\hypertarget{chassis_8hpp_source}{}\label{chassis_8hpp_source}\mbox{\hyperlink{chassis_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VEXLIBRARY\_CHASSIS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VEXLIBRARY\_CHASSIS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{motor_8hpp}{autonomous/motor.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pursuit_8hpp}{autonomous/pursuit.hpp}}>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{odometry_8hpp}{autonomous/odometry.hpp}}>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pid_8hpp}{autonomous/pid.hpp}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{path_8hpp}{pathing/path.hpp}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_chassis_af297223931de610ed5b91cf36a0b6ec1}{Chassis}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_motor_group}{MotorGroup}}\ *\ \mbox{\hyperlink{class_chassis_a679a72400c8c5a94dba22973ce279105}{left}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_motor_group}{MotorGroup}}\ *\ \mbox{\hyperlink{class_chassis_a8c6e9b445f6b05bd4f198e72b84e3109}{right}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ vex::rotation\ *\ \mbox{\hyperlink{class_chassis_ad548d805e3018c4ddeec2d0dbb263036}{front\_back\_encoder}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ vex::rotation\ *\ \mbox{\hyperlink{class_chassis_a39dec69ecf3de9f51ea1dbff9061864f}{left\_right\_encoder}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ vex::inertial\ *\ \mbox{\hyperlink{class_chassis_aed75249c66260fbf5167e6fde89fa87c}{inertial\_sensor}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_odometry}{Odometry}}\ \mbox{\hyperlink{class_chassis_a7e3a14953887e32c0ef0e0a9f18bdb82}{odom}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_a7c8bfa5d3240eed98d4a652fe8a3dc40}{base\_width}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_abd90f116b20164a3f007cda9d4d3a685}{wheel\_radius}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_a4698663a4f48db3907bbc998fe44c12d}{pursuit\_distance}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_af72753edf0f1aabb536733c16ed19e17}{gear\_multiplier}};}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_chassis_aaaa050cd1c14ba2f9809830347c2f2be}{thread\_sleep}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_chassis_af297223931de610ed5b91cf36a0b6ec1}{Chassis}}(\mbox{\hyperlink{class_motor_group}{MotorGroup}}*\ \mbox{\hyperlink{class_chassis_a679a72400c8c5a94dba22973ce279105}{left}},\ \mbox{\hyperlink{class_motor_group}{MotorGroup}}*\ \mbox{\hyperlink{class_chassis_a8c6e9b445f6b05bd4f198e72b84e3109}{right}},\ vex::rotation\ *\ \mbox{\hyperlink{class_chassis_ad548d805e3018c4ddeec2d0dbb263036}{front\_back\_encoder}},\ vex::rotation\ *\ \mbox{\hyperlink{class_chassis_a39dec69ecf3de9f51ea1dbff9061864f}{left\_right\_encoder}},\ vex::inertial\ *\ \mbox{\hyperlink{class_chassis_aed75249c66260fbf5167e6fde89fa87c}{inertial\_sensor}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_a7c8bfa5d3240eed98d4a652fe8a3dc40}{base\_width}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_abd90f116b20164a3f007cda9d4d3a685}{wheel\_radius}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_a4698663a4f48db3907bbc998fe44c12d}{pursuit\_distance}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_af72753edf0f1aabb536733c16ed19e17}{gear\_multiplier}},\ \textcolor{keywordtype}{double}\ initial\_x\ =\ 0.0,\ \textcolor{keywordtype}{double}\ initial\_y\ =\ 0.0,\ \textcolor{keywordtype}{double}\ initial\_rotation\ =\ 0.0,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_chassis_aaaa050cd1c14ba2f9809830347c2f2be}{thread\_sleep}}\ =\ 10);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chassis_a15b4f18c252d70bdda777d3c9ceb9e87}{follow\_path}}(std::vector<double>\ \mbox{\hyperlink{class_chassis_a7387e6f2e8b45f94e02ffee514fd6a43}{x}},\ std::vector<double>\ \mbox{\hyperlink{class_chassis_ab9013309534954d54aff34b35c131e0b}{y}},\ \textcolor{keywordtype}{double}\ tolerance,\ \textcolor{keywordtype}{double}\ speed\_factor\ =\ 1.0,\ \textcolor{keywordtype}{int}\ num\_points\ =\ 50);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chassis_a46c606dae6dc1f6227fbe1824303f7d6}{follow\_path}}(std::vector<std::pair<double,\ double>>\ points,\ \textcolor{keywordtype}{double}\ tolerance,\ \textcolor{keywordtype}{double}\ speed\_factor\ =\ 1.0,\ \textcolor{keywordtype}{int}\ point\_count\ =\ 50);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chassis_a6e20ba55496c7c3b8dccbae983df92b8}{follow\_path}}(\mbox{\hyperlink{class_path}{Path}}\ path,\ \textcolor{keywordtype}{double}\ tolerance\ =\ 5.0,\ \textcolor{keywordtype}{double}\ speed\_factor\ =\ 1.0);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chassis_af2dea15e50fe6f29fbbaec860f12ff49}{turn\_to}}(\textcolor{keywordtype}{double}\ angle,\ \textcolor{keywordtype}{double}\ tolerance\ =\ 0.01,\ \textcolor{keywordtype}{double}\ speed\_factor\ =\ 1.0);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chassis_a6a072cf91648b7aa6d03c297bfe9af51}{turn}}(\textcolor{keywordtype}{double}\ angle,\ \textcolor{keywordtype}{double}\ tolerance\ =\ 0.01,\ \textcolor{keywordtype}{double}\ speed\_factor\ =\ 1.0);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chassis_ad880e2ddf3484996b7ad54d387d833d8}{forward}}(\textcolor{keywordtype}{double}\ distance,\ \textcolor{keywordtype}{double}\ tolerance\ =\ 5.0,\ \textcolor{keywordtype}{double}\ speed\_factor\ =\ 1.0);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_a7387e6f2e8b45f94e02ffee514fd6a43}{x}}();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_ab9013309534954d54aff34b35c131e0b}{y}}();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_chassis_a5e69333d830e528497f11bbdcb951e51}{rotation}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chassis_a6c99d80fc0599dd701d845e1351d4b86}{basic\_control}}(\textcolor{keywordtype}{void}\ *\ instance);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ VEXLIBRARY\_CHASSIS\_HPP}}
+
+\end{DoxyCode}

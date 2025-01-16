@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['matrix_0',['Matrix',['../class_matrix.html#a2dba13c45127354c9f75ef576f49269b',1,'Matrix::Matrix()'],['../class_matrix.html#a464adab72cc1095504055a222bf1f337',1,'Matrix::Matrix(Matrix &amp;copy_from)'],['../class_matrix.html#a569a1062e56cc118cf1de36b766a841f',1,'Matrix::Matrix(Matrix &amp;&amp;move_from)'],['../class_matrix.html#afdb8160be55e2a446afb9ea596a60485',1,'Matrix::Matrix(std::pair&lt; int, int &gt; matrix_dimensions, double flood_value)'],['../class_matrix.html#a7ea21e941172502fc91ec25e500c47ed',1,'Matrix::Matrix(std::pair&lt; int, int &gt; matrix_dimensions, double *fill_values_unsafe_ptr)'],['../class_matrix.html#a43d8e7842805dac9ffe898358797fdf8',1,'Matrix::Matrix(std::vector&lt; std::vector&lt; double &gt; &gt; data_values)']]],
+  ['motorgroup_1',['MotorGroup',['../class_motor_group.html#abb8e3e077cdc061d321162f846647aeb',1,'MotorGroup::MotorGroup()'],['../class_motor_group.html#a5cfd551cbea7501e2749320bd142f6a2',1,'MotorGroup::MotorGroup(vex::motor *m1, Args ... m)']]]
+];

@@ -1,0 +1,217 @@
+\doxysection{PID Class Reference}
+\hypertarget{class_p_i_d}{}\label{class_p_i_d}\index{PID@{PID}}
+
+
+\doxylink{class_p_i_d}{PID} controller class.  
+
+
+
+
+{\ttfamily \#include $<$pid.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_i_d_afdd445e54a0a3753ceb5f50382295d16}{PID}} (double \mbox{\hyperlink{class_p_i_d_a1d61c12e44fa9917dfc5c104493f5f29}{kp}}, double \mbox{\hyperlink{class_p_i_d_a750722249a34a914f6e2f05cd9d4dee3}{ki}}, double \mbox{\hyperlink{class_p_i_d_a0094a774f6f64b4a1a9f93fd877c5df4}{kd}}, double \mbox{\hyperlink{class_p_i_d_ab1f9f946b91555c570e9484c8a83b6f2}{minimum\+\_\+output}}, double \mbox{\hyperlink{class_p_i_d_a5391b3660524f6de46bef7bca1c0f8cd}{maximum\+\_\+output}}, double \mbox{\hyperlink{class_p_i_d_a0702085f2de98342ad60159e0c685f7f}{gamma}}=0.\+9999)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_p_i_d}{PID} controller object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_a2e301ab123c9e18e677b4873b03550dd}{set\+\_\+target}} (double \mbox{\hyperlink{class_p_i_d_ae82cd4c11ce01219eca92f0b5b45cee5}{target}})
+\begin{DoxyCompactList}\small\item\em Set the target value for the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_af3a14c4db30a13386413e8690df29236}{calculate}} (double value)
+\begin{DoxyCompactList}\small\item\em Calculate the output of the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_af9677e76cb1beffbcf3f54cbc627c530}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_p_i_d_a1d61c12e44fa9917dfc5c104493f5f29}{kp}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_p_i_d}{PID} controller parameters. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a750722249a34a914f6e2f05cd9d4dee3}{ki}}
+\item 
+double \mbox{\hyperlink{class_p_i_d_a0094a774f6f64b4a1a9f93fd877c5df4}{kd}}
+\item 
+double \mbox{\hyperlink{class_p_i_d_ae82cd4c11ce01219eca92f0b5b45cee5}{target}}
+\begin{DoxyCompactList}\small\item\em The target value for the \doxylink{class_p_i_d}{PID} controller to reach, in whatever units the controller is operating in. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a7792de52992d0c0362f12df93a7abb28}{integral}}
+\begin{DoxyCompactList}\small\item\em The integral of the error over time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a501e79143e63873f3fe91915e640826f}{last\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em The last error value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_ab1f9f946b91555c570e9484c8a83b6f2}{minimum\+\_\+output}}
+\begin{DoxyCompactList}\small\item\em The minimum and maximum output values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a5391b3660524f6de46bef7bca1c0f8cd}{maximum\+\_\+output}}
+\item 
+double \mbox{\hyperlink{class_p_i_d_a0702085f2de98342ad60159e0c685f7f}{gamma}}
+\begin{DoxyCompactList}\small\item\em The gamma value for the integral term. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_p_i_d}{PID} controller class. 
+
+This class implements a general \doxylink{class_p_i_d}{PID} controller with output clamping to a given range, and integral discounting to address integral windup. The controller is designed to be used in any feedback loop to control a system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_p_i_d_afdd445e54a0a3753ceb5f50382295d16}\index{PID@{PID}!PID@{PID}}
+\index{PID@{PID}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}}
+{\footnotesize\ttfamily \label{class_p_i_d_afdd445e54a0a3753ceb5f50382295d16} 
+PID\+::\+PID (\begin{DoxyParamCaption}\item[{double}]{kp}{, }\item[{double}]{ki}{, }\item[{double}]{kd}{, }\item[{double}]{minimum\+\_\+output}{, }\item[{double}]{maximum\+\_\+output}{, }\item[{double}]{gamma}{ = {\ttfamily 0.9999}}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_p_i_d}{PID} controller object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & The proportionality constant-\/ this controls the sensitivity of the controller to the error \\
+\hline
+{\em ki} & The integration constant-\/ this controls the sensitivity of the controller to an accumulation of error over time \\
+\hline
+{\em kd} & The differentiation constant-\/ this controls the sensitivity of the controller to the rate of change of the error, damping output to prevent overshooting \\
+\hline
+{\em minimum\+\_\+output} & The minimum output value-\/ the output of the \doxylink{class_p_i_d}{PID} controller will be clamped to this value so that {\ttfamily \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} \texorpdfstring{$>$}{>}= \texorpdfstring{$\vert$}{|}min\+\_\+output\texorpdfstring{$\vert$}{|}} \\
+\hline
+{\em maximum\+\_\+output} & The maximum output value-\/ the output of the \doxylink{class_p_i_d}{PID} controller will be clamped to this value so that {\ttfamily \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<}= \texorpdfstring{$\vert$}{|}max\+\_\+output\texorpdfstring{$\vert$}{|}} \\
+\hline
+{\em gamma} & The gamma value for the integral term-\/ this value acts as a "{}discount"{} factor for the integral term, preventing the integral term from accumulating too much error and making the integral term "{}forget"{} older errors-\/ a value between 0 and 1 is recommended. Values close to 0 will make the integral term forget older errors faster, while values close to 1 will make the integral term remember older errors for longer. By default, this value is set to 0.\+9999. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+The follow conditions are enforced, and throw if not met\+: {\ttfamily kp, ki, kd \texorpdfstring{$>$}{>}= 0}, {\ttfamily \texorpdfstring{$\vert$}{|}min\+\_\+output\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<}= \texorpdfstring{$\vert$}{|}max\+\_\+output\texorpdfstring{$\vert$}{|}}, {\ttfamily 0 \texorpdfstring{$<$}{<}= gamma \texorpdfstring{$<$}{<}= 1} 
+\end{DoxyAttention}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_p_i_d_af3a14c4db30a13386413e8690df29236}\index{PID@{PID}!calculate@{calculate}}
+\index{calculate@{calculate}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily \label{class_p_i_d_af3a14c4db30a13386413e8690df29236} 
+double PID\+::calculate (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Calculate the output of the \doxylink{class_p_i_d}{PID} controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The current value, in whatever units the controller is operating \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output of the \doxylink{class_p_i_d}{PID} controller function 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_af9677e76cb1beffbcf3f54cbc627c530}\index{PID@{PID}!reset@{reset}}
+\index{reset@{reset}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_p_i_d_af9677e76cb1beffbcf3f54cbc627c530} 
+void PID\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the \doxylink{class_p_i_d}{PID} controller. 
+
+This function resets the integral term and the last error value. \Hypertarget{class_p_i_d_a2e301ab123c9e18e677b4873b03550dd}\index{PID@{PID}!set\_target@{set\_target}}
+\index{set\_target@{set\_target}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{set\_target()}{set\_target()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a2e301ab123c9e18e677b4873b03550dd} 
+void PID\+::set\+\_\+target (\begin{DoxyParamCaption}\item[{double}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Set the target value for the \doxylink{class_p_i_d}{PID} controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target value, in whatever units the controller is operating \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_p_i_d_a0702085f2de98342ad60159e0c685f7f}\index{PID@{PID}!gamma@{gamma}}
+\index{gamma@{gamma}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily \label{class_p_i_d_a0702085f2de98342ad60159e0c685f7f} 
+double PID\+::gamma\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The gamma value for the integral term. 
+
+This value acts as a "{}discount"{} factor for the integral term, which prevents the integral term from accumulating too much error and has the effect of making the integral term "{}forget"{} older errors. It should be a value between 0 and 1 (this is not enforced by the class). \Hypertarget{class_p_i_d_a7792de52992d0c0362f12df93a7abb28}\index{PID@{PID}!integral@{integral}}
+\index{integral@{integral}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{integral}{integral}}
+{\footnotesize\ttfamily \label{class_p_i_d_a7792de52992d0c0362f12df93a7abb28} 
+double PID\+::integral\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The integral of the error over time. 
+
+\Hypertarget{class_p_i_d_a0094a774f6f64b4a1a9f93fd877c5df4}\index{PID@{PID}!kd@{kd}}
+\index{kd@{kd}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{kd}{kd}}
+{\footnotesize\ttfamily \label{class_p_i_d_a0094a774f6f64b4a1a9f93fd877c5df4} 
+double PID\+::kd\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_p_i_d_a750722249a34a914f6e2f05cd9d4dee3}\index{PID@{PID}!ki@{ki}}
+\index{ki@{ki}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{ki}{ki}}
+{\footnotesize\ttfamily \label{class_p_i_d_a750722249a34a914f6e2f05cd9d4dee3} 
+double PID\+::ki\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_p_i_d_a1d61c12e44fa9917dfc5c104493f5f29}\index{PID@{PID}!kp@{kp}}
+\index{kp@{kp}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{kp}{kp}}
+{\footnotesize\ttfamily \label{class_p_i_d_a1d61c12e44fa9917dfc5c104493f5f29} 
+double PID\+::kp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_p_i_d}{PID} controller parameters. 
+
+These constants of proportionality, integration, and differentiation are used to calculate the output of the \doxylink{class_p_i_d}{PID} controller. They should be fine-\/tuned as hyperparameters of the program.
+
+kp controls the sensitivity of the controller to the error.
+
+ki controls the sensitivity of the controller to an accumulation of error over time.
+
+kd controls the sensitivity of the controller to the rate of change of the error, damping output to prevent overshooting. \Hypertarget{class_p_i_d_a501e79143e63873f3fe91915e640826f}\index{PID@{PID}!last\_error@{last\_error}}
+\index{last\_error@{last\_error}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{last\_error}{last\_error}}
+{\footnotesize\ttfamily \label{class_p_i_d_a501e79143e63873f3fe91915e640826f} 
+double PID\+::last\+\_\+error\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The last error value. 
+
+\Hypertarget{class_p_i_d_a5391b3660524f6de46bef7bca1c0f8cd}\index{PID@{PID}!maximum\_output@{maximum\_output}}
+\index{maximum\_output@{maximum\_output}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{maximum\_output}{maximum\_output}}
+{\footnotesize\ttfamily \label{class_p_i_d_a5391b3660524f6de46bef7bca1c0f8cd} 
+double PID\+::maximum\+\_\+output\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_p_i_d_ab1f9f946b91555c570e9484c8a83b6f2}\index{PID@{PID}!minimum\_output@{minimum\_output}}
+\index{minimum\_output@{minimum\_output}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{minimum\_output}{minimum\_output}}
+{\footnotesize\ttfamily \label{class_p_i_d_ab1f9f946b91555c570e9484c8a83b6f2} 
+double PID\+::minimum\+\_\+output\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The minimum and maximum output values. 
+
+The output of the \doxylink{class_p_i_d}{PID} controller is clamped to these values so that {\ttfamily \texorpdfstring{$\vert$}{|}min\+\_\+output\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<}= \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<}= \texorpdfstring{$\vert$}{|}max\+\_\+output\texorpdfstring{$\vert$}{|}}. \Hypertarget{class_p_i_d_ae82cd4c11ce01219eca92f0b5b45cee5}\index{PID@{PID}!target@{target}}
+\index{target@{target}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily \label{class_p_i_d_ae82cd4c11ce01219eca92f0b5b45cee5} 
+double PID\+::target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The target value for the \doxylink{class_p_i_d}{PID} controller to reach, in whatever units the controller is operating in. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+autonomous/\mbox{\hyperlink{pid_8hpp}{pid.\+hpp}}\end{DoxyCompactItemize}
